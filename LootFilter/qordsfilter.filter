@@ -159,6 +159,12 @@ ItemDisplay[dhn]: %GRAY%Diablo's Horn <<notify>>
 ItemDisplay[bey]: %GRAY%Baal's Eye <<notify>>
 ItemDisplay[mbr]: %GRAY%Mephisto's Brain <<notify>>
 
+//Wirt Leg
+ItemDisplay[leg SOCK>0]: %NAME% %!stripedsocks!%  <<qspecials>>
+ItemDisplay[leg]: %NAME%  <<qspecials>>
+// Other quest
+ItemDisplay[QUEST]: %TAN%%NAME% <:notify: NotificationColor = GOLD> //%NOTIFY(GOLD)%
+
 //PoD Items
 ItemDisplay[SPECIAL]: %GOLD%%NAME% <<qspecials>>
 ItemDisplay[SYNTH]: %GOLD%%NAME% <<qspecials>> //failsafe forsynthesized items, the above *should* catch them though
@@ -170,13 +176,6 @@ ItemDisplay[cx7]: %RED%»»»» %NAME%%RED% ««««
 ItemDisplay[ma1 OR ma2 OR ma3 OR ma5 OR ma6 OR ma7 OR ma9 OR ma10 OR maz OR ma11]: %NAME% %!mapmacro!% <<highprionotify>>
 ItemDisplay[ma4 OR ma8]: %NAME% %RED%No Boss %!mapmacro!% <<highprionotify>>
 ItemDisplay[MAP]: %GOLD%%NAME% %WHITE%[T%MAPTIER%] %BLUE%(%ILVL%) [%CODE%] <<highprionotify>>
-
-//Wirt Leg
-ItemDisplay[leg SOCK>0]: %NAME% %!stripedsocks!% <<notify>>
-ItemDisplay[leg]: %NAME% <:notify: NotificationColor = GOLD>
-
-// Other quest
-ItemDisplay[QUEST]: %TAN%%NAME% <:notify: NotificationColor = GOLD> //%NOTIFY(GOLD)%
 
 //Runes
 //ALWAYS show me ort
