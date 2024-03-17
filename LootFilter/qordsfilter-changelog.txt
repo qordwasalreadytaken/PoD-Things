@@ -2,6 +2,13 @@ Qords filter
 All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 #####################################
+Update 3-17
+Fixes:
+Additions:
+Added shopping notifications for +curse, PnB, and N summon skills on vedor items
+Changes:
+
+#####################################
 Update 3-16
 Fixes:
 Additions:
