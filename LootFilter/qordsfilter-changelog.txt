@@ -7,6 +7,7 @@ Fixes:
 Additions:
 Changes:
 Changed druid pelt lines to include +skills on rare, magic; moved them to if block
+Moved vendor notifications for magic sorc skill items to LOW, too many notifications when opening a malah chat imo
 
 #####################################
 Update 3-17
