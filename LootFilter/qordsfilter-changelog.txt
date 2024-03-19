@@ -2,6 +2,13 @@ Qords filter
 All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 #####################################
+Update 3-19
+Fixes:
+Additions:
+Changes:
+Changed druid pelt lines to include +skills on rare, magic; moved them to if block
+
+#####################################
 Update 3-17
 Fixes:
 Additions:
