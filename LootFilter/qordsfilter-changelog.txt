@@ -6,6 +6,7 @@ Update 3-21
 Fixes:
 Additions:
 Changes:
+Changed display of +5 and +6 hemo wands
 Moves Barb skill helmets to EnableIf block, changes to skill names instead of id's
 
 #####################################
