@@ -6,6 +6,7 @@ Update 3-29
 Fixes:
 Additions:
 Changes:
+Changed holy shield notification from +3 to +1 or more, added text asking for screenshot of it
 Added more notifications for claw shopping
 Changed class specific blue/yellow to not show in filerlevel 3 and up
 
