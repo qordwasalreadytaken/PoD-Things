@@ -26,8 +26,9 @@
 //
 Attribute[Author]: Qord 
 Attribute[Name]: QordsFilter
-Attribute[Version]: 3.21
-Attribute[Date]: 21 March
+Attribute[Version]: 3.29
+Attribute[Date]: 29 March
+Attribute[FilterLevels]: This is a description of the different filterlevels
 
 Option[IgnoreMissingSounds]: True
 
@@ -36,7 +37,7 @@ Option[IgnoreMissingSounds]: True
 FilterLevel[1]: Loosey goosey
 // Filterlevel 2 hides items in the utility section, id scrolls, some blues, lower tier gems
 FilterLevel[2]: Utility
-// Filterlevel 3 hides the above, as well as low runes, large charms, hides some bases (spirit, hoto, cta)
+// Filterlevel 3 hides the above, as well as low runes, large charms, hides some bases (spirit, hoto, cta), hides class specific magic
 FilterLevel[3]: No low runes
 // Filterlevel 4 hides the above, health/mana pots, "probly garbage" labeled items, large charms, hides the "changed in newest patch" lines, more runeword bases
 FilterLevel[4]: No hp/mp pots
@@ -96,6 +97,7 @@ ItemStyle[notify]: NotificationColor = WHITE //<<notify>>
 ItemStyle[craygray]: BorderColor = 27, BorderSize = 1, BackgroundColor = 31, NotificationColor = WHITE //<<craygray>>
 ItemStyle[lowprionotify]: NotificationColor = ITEM, NotificationPriority = LOW, MapIcon = 6 // <<lowprionotify>>
 ItemStyle[highprionotify]: NotificationColor = ITEM, NotificationPriority = HIGH, MapIcon = 11 // <<highprionotify>>
+ItemStyle[test]: BorderColor = RGB(245/2/19), BorderSize = 4, BackgroundColor = RGB(245/2/19), NotificationColor = WHITE //<<craygray>>
 
 
 //<NotificationSoundPriority = HIGH, NotificationSound = "@global\sfx\item\rune"><NotificationSoundPriority = HIGH, NotificationSound = "@global\sfx\item\rune">
@@ -574,8 +576,8 @@ EndIf[]
 
 // Necro
 EnableIf[(MAG OR NMAG) (CL4 OR WP12)]
-      ItemDisplay[TABSK16>2 SK477>2]: %NAME% %RED% +6 Hemo %!graysocks!%<:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
-      ItemDisplay[(((TABSK16>1 OR CLSK2>1) SK477>2) OR (TABSK16>2 SK477>1)) SOCK=0]: %NAME% %RED% +5 Hemo %!graysocks!%<:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
+      ItemDisplay[TABSK16>2 SK477>2]: %NAME% %RED% +6 Hemo %!graysocks!%<:notify: BorderColor = RGB(245/2/19), BorderSize = 4, BackgroundColor = RGB(245/2/19), NotificationPriority = HIGH, NotificationColor = ITEM>
+      ItemDisplay[(((TABSK16>1 OR CLSK2>1) SK477>2) OR (TABSK16>2 SK477>1)) SOCK=0]: %NAME% %RED% +5 Hemo %!graysocks!%<:notify: BorderColor = RGB(245/2/19), BorderSize = 4, BackgroundColor = RGB(245/2/19), NotificationPriority = HIGH, NotificationColor = ITEM>
       ItemDisplay[CLSK2>0]: %NAME% %LIGHT_GRAY%+Necro Skills%CONTINUE%
       ItemDisplay[TABSK16=3]: %NAME% %LIGHT_GRAY%+3 Curses%CONTINUE%
       ItemDisplay[TABSK16=2 OR TABSK16=1]: %NAME% %LIGHT_GRAY%+Curses%CONTINUE%
@@ -602,7 +604,7 @@ EnableIf[(MAG OR NMAG) (CL4 OR WP12)]
       ItemDisplay[(MAG OR NMAG) SKILL("Poison Nova")>2]:%NAME% %LIGHT_GRAY%+3 Poison Nova%CONTINUE%
       ItemDisplay[(MAG OR NMAG) SKILL("Amplify Damage")>2]:%NAME% %LIGHT_GRAY%+3 Amplify Damage%CONTINUE%
       ItemDisplay[(MAG OR NMAG) SKILL("Dim Vision")>2]:%NAME% %LIGHT_GRAY%+3 Dim Vision%CONTINUE%
-      ItemDisplay[(MAG OR NMAG) SKILL("Hemorrhage")>2]:%NAME% %LIGHT_GRAY%+3 Hemorrhage%CONTINUE%
+      ItemDisplay[(MAG OR NMAG) SKILL("Hemorrhage")>2]:%NAME% %LIGHT_GRAY%+3 Hemorrhage <:notify: BackgroundColor = RGB(245/2/19)> %CONTINUE%
       ItemDisplay[(MAG OR NMAG) SKILL("Weaken")>2]:%NAME% %LIGHT_GRAY%+3 Weaken%CONTINUE%
       ItemDisplay[(MAG OR NMAG) SKILL("Iron Maiden")>2]:%NAME% %LIGHT_GRAY%+3 Iron Maiden%CONTINUE%
       ItemDisplay[(MAG OR NMAG) SKILL("Terror")>2]:%NAME% %LIGHT_GRAY%+3 Terror%CONTINUE%
@@ -611,12 +613,32 @@ EnableIf[(MAG OR NMAG) (CL4 OR WP12)]
       ItemDisplay[(MAG OR NMAG) SKILL("Attract")>2]:%NAME% %LIGHT_GRAY%+3 Attract%CONTINUE%
       ItemDisplay[(MAG OR NMAG) SKILL("Decrepify")>2]:%NAME% %LIGHT_GRAY%+3 Decrepify%CONTINUE%
       ItemDisplay[(MAG OR NMAG) SKILL("Lower Resist")>2]:%NAME% %LIGHT_GRAY%+3 Lower Resist%CONTINUE%
-      ItemDisplay[MAG (CLSK2>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR SKILL("Summon Mastery")>2 OR SKILL("Raise Skeleton Warrior")>2 OR SKILL("Bone Offering")>2 OR SKILL("Clay Golem")>2 OR SKILL("Flesh Offering")>2 OR SKILL("Raise Skeletal Mage")>2 OR SKILL("Blood Golem")>2 OR SKILL("Convocation")>2 OR SKILL("Iron Golem")>2 OR SKILL("Fire Golem")>2 OR SKILL("Revive")>2 OR SKILL("Deadly Poison")>2 OR SKILL("Teeth")>2 OR SKILL("Bone Armor")>2 OR SKILL("Corpse Explosion")>2 OR SKILL("Desecrate")>2 OR SKILL("Bone Spear")>2 OR SKILL("Bone Wall")>2 OR SKILL("Bone Spirit")>2 OR SKILL("Poison Nova")>2 OR SKILL("Amplify Damage")>2 OR SKILL("Dim Vision")>2 OR SKILL("Hemorrhage")>2 OR SKILL("Weaken")>2 OR SKILL("Iron Maiden")>2 OR SKILL("Terror")>2 OR SKILL("Confuse")>2 OR SKILL("Life Tap")>2 OR SKILL("Attract")>2 OR SKILL("Decrepify")>2 OR SKILL("Lower Resist")>2)]: %NAME% %!graysocks!%<:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
-      ItemDisplay[(NMAG) (SKILL("Summon Mastery")>2 OR SKILL("Raise Skeleton Warrior")>2 OR SKILL("Bone Offering")>2 OR SKILL("Clay Golem")>2 OR SKILL("Flesh Offering")>2 OR SKILL("Raise Skeletal Mage")>2 OR SKILL("Blood Golem")>2 OR SKILL("Convocation")>2 OR SKILL("Iron Golem")>2 OR SKILL("Fire Golem")>2 OR SKILL("Revive")>2 OR SKILL("Deadly Poison")>2 OR SKILL("Teeth")>2 OR SKILL("Bone Armor")>2 OR SKILL("Corpse Explosion")>2 OR SKILL("Desecrate")>2 OR SKILL("Bone Spear")>2 OR SKILL("Bone Wall")>2 OR SKILL("Bone Spirit")>2 OR SKILL("Poison Nova")>2 OR SKILL("Amplify Damage")>2 OR SKILL("Dim Vision")>2 OR SKILL("Hemorrhage")>2 OR SKILL("Weaken")>2 OR SKILL("Iron Maiden")>2 OR SKILL("Terror")>2 OR SKILL("Confuse")>2 OR SKILL("Life Tap")>2 OR SKILL("Attract")>2 OR SKILL("Decrepify")>2 OR SKILL("Lower Resist")>2)]: %NAME% %!graysocks!%//<:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
+      ItemDisplay[MAG (CLSK2>0 OR TABSK16>0 OR TABSK17>0 OR TABSK18>0 OR SKILL("Summon Mastery")>2 OR SKILL("Raise Skeleton Warrior")>2 OR SKILL("Bone Offering")>2 OR SKILL("Clay Golem")>2 OR SKILL("Flesh Offering")>2 OR SKILL("Raise Skeletal Mage")>2 OR SKILL("Blood Golem")>2 OR SKILL("Convocation")>2 OR SKILL("Iron Golem")>2 OR SKILL("Fire Golem")>2 OR SKILL("Revive")>2 OR SKILL("Deadly Poison")>2 OR SKILL("Teeth")>2 OR SKILL("Bone Armor")>2 OR SKILL("Corpse Explosion")>2 OR SKILL("Desecrate")>2 OR SKILL("Bone Spear")>2 OR SKILL("Bone Wall")>2 OR SKILL("Bone Spirit")>2 OR SKILL("Poison Nova")>2 OR SKILL("Amplify Damage")>2 OR SKILL("Dim Vision")>2 OR SKILL("Hemorrhage")>2 OR SKILL("Weaken")>2 OR SKILL("Iron Maiden")>2 OR SKILL("Terror")>2 OR SKILL("Confuse")>2 OR SKILL("Life Tap")>2 OR SKILL("Attract")>2 OR SKILL("Decrepify")>2 OR SKILL("Lower Resist")>2)]: %NAME% %!graysocks!% <:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
+      ItemDisplay[(NMAG) (SKILL("Summon Mastery")>2 OR SKILL("Raise Skeleton Warrior")>2 OR SKILL("Bone Offering")>2 OR SKILL("Clay Golem")>2 OR SKILL("Flesh Offering")>2 OR SKILL("Raise Skeletal Mage")>2 OR SKILL("Blood Golem")>2 OR SKILL("Convocation")>2 OR SKILL("Iron Golem")>2 OR SKILL("Fire Golem")>2 OR SKILL("Revive")>2 OR SKILL("Deadly Poison")>2 OR SKILL("Teeth")>2 OR SKILL("Bone Armor")>2 OR SKILL("Corpse Explosion")>2 OR SKILL("Desecrate")>2 OR SKILL("Bone Spear")>2 OR SKILL("Bone Wall")>2 OR SKILL("Bone Spirit")>2 OR SKILL("Poison Nova")>2 OR SKILL("Amplify Damage")>2 OR SKILL("Dim Vision")>2 OR SKILL("Hemorrhage")>2 OR SKILL("Weaken")>2 OR SKILL("Iron Maiden")>2 OR SKILL("Terror")>2 OR SKILL("Confuse")>2 OR SKILL("Life Tap")>2 OR SKILL("Attract")>2 OR SKILL("Decrepify")>2 OR SKILL("Lower Resist")>2)]: %NAME% %!graysocks!% <:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
 EndIf[]
 
 // Assassin start, need to rethink this because of !NORM and !INF entries
 EnableIf[CL5 ((NMAG (SOCK=0 OR SOCK>2)) OR (MAG ID))]
+    ItemDisplay[CL5 (CLSK6>0 AND SK271>2)]: %!shopping!% %PURPLE%Light Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (CLSK6>1 AND SK271>1)]: %!shopping!% %PURPLE%Light Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (TABSK48>0 AND SK271>2)]: %!shopping!% %PURPLE%Light Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (TABSK48>1 AND SK271>1)]: %!shopping!% %PURPLE%Light Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (CLSK6>0 AND SK262>2)]: %!shopping!% %PURPLE%Fire Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (CLSK6>1 AND SK262>1)]: %!shopping!% %PURPLE%Fire Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (TABSK48>0 AND SK262>2)]: %!shopping!% %PURPLE%Fire Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (TABSK48>1 AND SK262>1)]: %!shopping!% %PURPLE%Fire Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (CLSK6>0 AND SK272>2)]: %!shopping!% %PURPLE%Fire Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (CLSK6>1 AND SK272>1)]: %!shopping!% %PURPLE%Fire Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (TABSK48>0 AND SK272>2)]: %!shopping!% %PURPLE%Fire Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (TABSK48>1 AND SK272>1)]: %!shopping!% %PURPLE%Fire Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (CLSK6>0 AND SK277>2)]: %!shopping!% %PURPLE%Bladeshield Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (CLSK6>1 AND SK277>1)]: %!shopping!% %PURPLE%Bladeshield Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (TABSK48>0 AND SK277>2)]: %!shopping!% %PURPLE%Bladeshield Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (TABSK48>1 AND SK277>1)]: %!shopping!% %PURPLE%Bladeshield Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (CLSK6>0 AND SK278>2)]: %!shopping!% %PURPLE%Venom Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (CLSK6>1 AND SK278>1)]: %!shopping!% %PURPLE%Venom Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (TABSK49>0 AND SK278>2)]: %!shopping!% %PURPLE%Venom Claw %!shopping!% <<notify>>
+    ItemDisplay[CL5 (TABSK49>1 AND SK278>1)]: %!shopping!% %PURPLE%Venom Claw %!shopping!% <<notify>>
 	ItemDisplay[CLSK6>0 CL5]: %NAME% %RED%@@@@@ +Sin Skills %CONTINUE%
 	ItemDisplay[TABSK48>0 CL5]: %NAME% %RED%@@@@@ +Trap Skills %CONTINUE%
 	ItemDisplay[TABSK49>0 CL5]: %NAME% %RED%@@ +Shadow Skills %CONTINUE%
@@ -827,7 +849,7 @@ ItemDisplay[(UNI OR SET)]: %NAME% //[%CODE%]
 //Class items  cl1 Druid pelts, cl2 barb helms, cl5 assassin weapons, cl6 sorc orbs, cl7 zon weapons, wp6 javelins, wp12 wands, wsp war scepters, 9ws divine scepter, 7ws caduceus
 ItemDisplay[(CL1 OR CL2 OR CL5 OR CL6 OR WP12 OR WP6 OR CL7) (FILTERLVL=1) MAG ETH]: %GRAY%ETH %BLUE%%NAME%
 ItemDisplay[(CL1 OR CL2 OR CL5 OR CL6 OR WP12 OR WP6 OR CL7) RARE ETH]: %GRAY%ETH %YELLOW%%NAME%
-ItemDisplay[(CL1 OR CL2 OR CL5 OR CL6 OR WP12 OR WP6 OR CL7) (MAG OR RARE)]: %NAME%
+ItemDisplay[(CL1 OR CL2 OR CL5 OR CL6 OR WP12 OR WP6 OR CL7) (MAG OR RARE) (FILTERLVL<3)]: %NAME%
 ItemDisplay[WEAPON (WP6 AND CL7) MAG ETH]: %GRAY%ETH %BLUE%Fix the filter Qord4 %NAME% //redundant?
 ItemDisplay[WEAPON (WP6 AND CL7) RARE ETH]: %GRAY%ETH %YELLOW%Fix the filter Qord5 %NAME% //redundant?
 ItemDisplay[WEAPON (WP6 AND CL7) (MAG OR RARE)]: Fix the filter Qord6 %NAME% //redundant?
