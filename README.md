@@ -1,5 +1,6 @@
 # PoD-Things
-
+# qordsfilter.filter
+Qord's filter is a fairly simple filter that stays pretty close to vanilla in appearance, notable exceptions include larger clickable areas for many items, some artistic flair on runes and uniques, and some highlights to make things like charms stand out a little. 
 
 
 
