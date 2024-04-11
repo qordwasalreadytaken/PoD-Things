@@ -26,8 +26,8 @@
 //
 Attribute[Author]: Qord 
 Attribute[Name]: QordsFilter
-Attribute[Version]: 3.30
-Attribute[Date]: 30 March
+Attribute[Version]: 4.11
+Attribute[Date]: 11 April
 Attribute[FilterLevels]: This is a description of the different filterlevels
 
 Option[IgnoreMissingSounds]: True
