@@ -676,7 +676,7 @@ ItemDisplay[CL5 !INF !NORM NMAG (SK261>2 OR SK262>2 OR SK263>2 OR SK264>2 OR SK2
 
 
 //Other RuneWord Bases
-//Aramex special, legendary  mallet and boneweave
+//Aramex special, legendary mallet and boneweave; mat spear 0 or 5 socket
 ItemDisplay[(uhn OR 7wh) (NMAG OR RW) (SOCK=0 OR SOCK>2) FILTERLVL<3]: %NAME% %!graysocks!%
 ItemDisplay[amd (NMAG OR RW) (SOCK=0 OR SOCK=5) FILTERLVL<3]: %NAME% %!graysocks!%
 //Other requests
