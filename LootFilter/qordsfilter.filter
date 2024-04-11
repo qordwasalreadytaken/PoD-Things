@@ -289,9 +289,9 @@ ItemDisplay[(jew OR rin OR amu OR ulc OR xea OR urn OR uap OR ulm OR ci3 OR xtb 
 //OK UNIQUE Items ETH
 ItemDisplay[(xhn OR upl OR uld OR uow OR ama OR 6cs OR 7s8) ETH UNI !ID]: %!okuniqeth!% <:notify: NotificationColor = GOLD> //%NOTIFY(ORANGE)%
 //OK UNIQUE Items NONETH unid
-ItemDisplay[(6hx OR uow OR pa9 OR nea OR 7cr OR 7fl OR 7kr OR oba OR ama OR lbt OR xhb OR uhb OR xvb OR xhn OR uhm OR xh9 OR usk OR ci2 OR baa OR bac OR dra OR dre OR xhn OR xtp OR xlt OR upl OR uld OR uvg OR uhg OR utu OR zlb OR zvb OR zhb OR umc OR 6cs OR xmb OR amf OR umg OR 7s8 OR xhm OR rxb OR 8rx OR 6sw OR 9mp) UNI !ID !ETH]: %!okuniq!% <<okuniqs>>
+ItemDisplay[(9bs OR 6hx OR uow OR pa9 OR nea OR 7cr OR 7fl OR 7kr OR oba OR ama OR lbt OR xhb OR uhb OR xvb OR xhn OR uhm OR xh9 OR usk OR ci2 OR baa OR bac OR dra OR dre OR xhn OR xtp OR xlt OR upl OR uld OR uvg OR uhg OR utu OR zlb OR zvb OR zhb OR umc OR 6cs OR xmb OR amf OR umg OR 7s8 OR xhm OR rxb OR 8rx OR 6sw OR 9mp) UNI !ID !ETH]: %!okuniq!% <<okuniqs>>
 //OK UNIQUE Items NONETH ID'd
-ItemDisplay[(6hx OR uow OR pa9 OR nea OR 7cr OR 7fl OR 7kr OR oba OR ama OR lbt OR xhb OR uhb OR xvb OR xhn OR uhm OR xh9 OR usk OR ci2 OR baa OR bac OR dra OR dre OR xhn OR xtp OR xlt OR upl OR uld OR uvg OR uhg OR utu OR zlb OR zvb OR zhb OR umc OR 6cs OR xmb OR amf OR umg OR 7s8 OR xhm OR rxb OR 8rx OR 6sw OR 9mp) UNI !ETH]: %!okuniqid!% <<okuniqs>>
+ItemDisplay[(9bs OR 6hx OR uow OR pa9 OR nea OR 7cr OR 7fl OR 7kr OR oba OR ama OR lbt OR xhb OR uhb OR xvb OR xhn OR uhm OR xh9 OR usk OR ci2 OR baa OR bac OR dra OR dre OR xhn OR xtp OR xlt OR upl OR uld OR uvg OR uhg OR utu OR zlb OR zvb OR zhb OR umc OR 6cs OR xmb OR amf OR umg OR 7s8 OR xhm OR rxb OR 8rx OR 6sw OR 9mp) UNI !ETH]: %!okuniqid!% <<okuniqs>>
 //Show me all ID'd uniques
 ItemDisplay[UNI]: %NAME% //[%CODE%]
 //Uinque catch all 
