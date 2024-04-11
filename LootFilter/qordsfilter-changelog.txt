@@ -2,6 +2,14 @@ Qords filter
 All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 #####################################
+Update 4-11
+Fixes:
+Additions:
+Added Headstriker to the Ok uniques for better visibility
+Added Mat spear (0,5 sockets)
+Changes:
+
+#####################################
 Update 3-30
 Fixes:
 Removed accidental "qord special" text in a display line
