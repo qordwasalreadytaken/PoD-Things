@@ -8,6 +8,7 @@ Additions:
 Added Headstriker to the Ok uniques for better visibility
 Added Mat spear (0,5 sockets)
 Changes:
+Changed runes below 18 to use <=17 instead of <18 just because
 
 #####################################
 Update 3-30
