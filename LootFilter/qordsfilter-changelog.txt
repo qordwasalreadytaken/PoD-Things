@@ -7,7 +7,7 @@ Fixes:
 Fixed inconsistencies in charm display
 Additions:
 Added NMAG line for necro leveling heads
-Force loose filter with low notification priority
+Force loose filter with low notification priority on load
 Added gambling screen lines
 Changes:
 Changed jewels to have same visibility as charms 
