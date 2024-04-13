@@ -2,6 +2,17 @@ Qords filter
 All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 #####################################
+Update 4-13
+Fixes:
+Fixed inconsistencies in charm display
+Additions:
+Added NMAG line for necro leveling heads
+Force loose filter with low notification priority
+Added gambling screen lines
+Changes:
+Changed jewels to have same visibility as charms 
+
+#####################################
 Update 4-11
 Fixes:
 Additions:
