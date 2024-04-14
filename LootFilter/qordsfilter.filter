@@ -172,6 +172,8 @@ ItemDisplay[mbr]: %GRAY%Mephisto's Brain <<notify>>
 //Wirt Leg
 ItemDisplay[leg SOCK>0]: %NAME% %!stripedsocks!%  <<qspecials>>
 ItemDisplay[leg]: %NAME%  <<qspecials>>
+// Alt text for horadric staff
+ItemDisplay[hst OR msf]: %TAN%%NAME% <:notify: NotificationColor = GOLD> {%NAME% %DGREEN%[Circle]                [Circle&Crescent]%NL%[Crescent]             [Triangle]%NL%[Square]     [Arrows]%NL%[Star]%NL%%ORANGE%DURIEL TOMB ORDER:} //%NOTIFY(GOLD)%
 // Other quest
 ItemDisplay[QUEST]: %TAN%%NAME% <:notify: NotificationColor = GOLD> //%NOTIFY(GOLD)%
 
