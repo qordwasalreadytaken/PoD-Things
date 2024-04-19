@@ -11,6 +11,7 @@
 // Hides no uniques or set items until filterlevel 5, but does append the item code of less desirable ones
 //      in case user wants to add it to a higher visibility list
 // Shows a lot rares
+// Hides a lot of blues, 
 // Hides ID scrolls outside of filterlevel 1, only see TP and ID scrolls if you have less than 25 in tome
 // 
 // To-do - check redundant
@@ -25,6 +26,8 @@ Attribute[Name]: QordsFilter
 Attribute[Version]: 4.19
 Attribute[Date]: 19 April
 Attribute[FilterLevels]: This is a description of the different filterlevels
+Attribute[AttributeQordsocool]: This is a description of the different filterlevels
+Option[OptionQordsocool]: True
 
 Option[IgnoreMissingSounds]: True
 
@@ -112,7 +115,7 @@ ItemStyle[test]: BorderColor = RGB(245/2/19), BorderSize = 4, BackgroundColor = 
 
 //Gambling screen
 ItemDisplay[STORAGE(GAMBLE) NMAG !ID (7wa)]: %NAME% <:notify: NotificationColor = RED>
-ItemDisplay[STORAGE(GAMBLE) NMAG !ID (amu OR rin OR EQ7 OR aar)]: %NAME% Gamble <:notify: NotificationColor = RED>
+ItemDisplay[STORAGE(GAMBLE) NMAG !ID (amu OR rin OR EQ7 OR aar)]: Gamble %NAME% <:notify: NotificationColor = RED>
 
 //Gold
 ItemDisplay[GOLD<100 CLVL<20]:
