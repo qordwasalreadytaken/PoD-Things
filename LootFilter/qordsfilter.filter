@@ -5,29 +5,25 @@
 // Sorry if I left anyone out, been using this for so long I don't remember
 //      who else I should attribute some of the formatting to. DM me if I missed you. 
 // 
-// Trying to keep filterlevel dscriptions up to date, but some highlights include
+// Trying to keep filterlevel descriptions up to date, but some highlights include
 // I like crafts and Sorc/Necro/Assassin RW bases
 // Shows ort even when other low runes are hdden
 // Hides no uniques or set items until filterlevel 5, but does append the item code of less desirable ones
 //      in case user wants to add it to a higher visibility list
 // Shows a lot rares
-// Hides a lot of blues, hides gems under flawless; testing alternate config to show regular gems under certain conditions
 // Hides ID scrolls outside of filterlevel 1, only see TP and ID scrolls if you have less than 25 in tome
 // 
 // To-do - check redundant
 // Done except for sin-> Add more +skill lines for sorc, necro, assasin bases; overhaul this completely
 // Fix the "fix" lines, added numbers for ease of finding
 // Check white/gray for double names, ie name showing up as "Claw Claw" or "Hydra Bow Hydra Bow", rethink those socket colors
-// Done -> Give pelts continue lines and add more skills
 // Duplicate sound macro lines with global vs local sounds, need to address
 //
-// Big reno on sorc, necro, and druid runeword bases; need to do assassin; Sorc misc line not working
-// Minimal bases to test necro with, so there's a 2nd known-working section after the newer, test code
 //
 Attribute[Author]: Qord 
 Attribute[Name]: QordsFilter
-Attribute[Version]: 4.13
-Attribute[Date]: 13 April
+Attribute[Version]: 4.19
+Attribute[Date]: 19 April
 Attribute[FilterLevels]: This is a description of the different filterlevels
 
 Option[IgnoreMissingSounds]: True

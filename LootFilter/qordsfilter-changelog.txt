@@ -3,6 +3,14 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 4-19
+Fixes:
+Additions:
+Changes:
+Cleaned up comments
+Fixed some misspellings/typos
+
+#####################################
 Update 4-14
 Fixes:
 Additions:
