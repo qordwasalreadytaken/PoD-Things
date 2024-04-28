@@ -693,7 +693,7 @@ ItemDisplay[CL5 !INF !NORM NMAG (SK261>2 OR SK262>2 OR SK263>2 OR SK264>2 OR SK2
 //Other RuneWord Bases
 //Aramex special, legendary  mallet and boneweave
 ItemDisplay[(uhn OR 7wh) (NMAG OR RW) (SOCK=0 OR SOCK>2) FILTERLVL<3]: %NAME% %!graysocks!%
-ItemDisplay[(ame OR amd) (NMAG OR RW) (SOCK=0 OR SOCK>4) FILTERLVL<5]: %NAME% %!tansocks!%
+ItemDisplay[(ame OR amd) (NMAG OR RW) (SOCK=0 OR SOCK>3) FILTERLVL<5]: %NAME% %!tansocks!%
 //Other requests
 ItemDisplay[(6cs OR 6ws) NMAG ETH (SOCK=0 OR SOCK=4) FILTERLVL<3]: %NAME% %!graysocks!%
 //Spirit Swords
