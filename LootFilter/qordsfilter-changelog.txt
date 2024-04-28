@@ -3,6 +3,14 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 4-28
+Fixes:
+Additions:
+Added ame to the amd line for zon spears
+Changes:
+Changed spear line to include more filterlevels
+
+#####################################
 Update 4-19
 Fixes:
 Additions:
