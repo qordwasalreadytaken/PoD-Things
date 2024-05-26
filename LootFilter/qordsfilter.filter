@@ -721,7 +721,7 @@ ItemDisplay[6cb SOCK=4]: %NAME% %!tansocks!%
 ItemDisplay[6lw (NMAG OR RW) SOCK=6]: %GRAY% %NAME% %!tansocks!%
 ItemDisplay[6lw (NMAG OR RW) SOCK=0 (!INF AND !SUP)]: %GRAY% %NAME% %!tansocks!%
 //More bow bases
-ItemDisplay[WP9 (NMAG OR RW) (!SOCK=1 OR !SOCK=2) FILTERLVL<4]: %GRAY%[%WHITE%3bow%GRAY%] %NAME% %!graysocks!%
+ItemDisplay[WP9 (NMAG OR RW) (!SOCK=1 OR !SOCK=2) FILTERLVL<4]: %NAME% %!graysocks!%
 //Infi/Insi/Pride and Obedience/Doom
 ItemDisplay[(7wc OR 7pa OR 7s8 OR 7vo OR 7h7 OR 7tr OR 7br OR 7st OR 7p7) (ETH AND (NMAG OR RW)) (SOCK=4 OR SOCK=5)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
 ItemDisplay[(7vo OR 7tr) (ETH AND !INF) AND (NMAG OR RW) SOCK=0]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
