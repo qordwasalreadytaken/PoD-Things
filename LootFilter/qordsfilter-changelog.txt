@@ -3,6 +3,14 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 5-26
+Fixes:
+Additions:
+Added more claw options for lower levels and +2's 
+Changes:
+Removed extra lines in some id'd rare names
+
+#####################################
 Update 5-11
 Fixes:
 Additions:
