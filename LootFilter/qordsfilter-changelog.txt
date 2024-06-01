@@ -3,6 +3,17 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 6-1
+Fixes:
+Some claw display
+Possible corruption mods not showing on some items
+Too many weapons showing that should have been filtered
+Additions:
+Changes:
+2-handed BO weapons were being notified while shopping, this is less than 
+helpful so it's been changed so only 1-handed weapons get notifications
+
+#####################################
 Update 5-26
 Fixes:
 Additions:
