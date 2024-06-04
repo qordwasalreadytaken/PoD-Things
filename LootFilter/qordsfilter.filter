@@ -265,7 +265,7 @@ ItemDisplay[cq2 RARE ILVL>60]: %NL%%NAME%%NL% <<rare>>
 //Rare Gloves, Belts and Boots
 ItemDisplay[(EQ4 OR EQ5 OR EQ6 OR mpi) ETH RARE]: %GRAY%ETH %YELLOW%%NAME% <<rare>>  
 ItemDisplay[(EQ4 OR EQ5 OR EQ6 OR mpi) RARE !ID]: %NL%%NAME%%NL% %NL%<<rare>> 
-ItemDisplay[(EQ4 OR EQ5 OR EQ6 OR mpi) RARE]: %NAME%%NL% <<rare>> %CONTINUE%
+ItemDisplay[(EQ4 OR EQ5 OR EQ6 OR mpi) RARE]: %NAME% <<rare>> %CONTINUE%
 
 //Circlets
 ItemDisplay[EQ7 MAG ETH]: %GRAY%ETH %BLUE%%NAME% 
@@ -723,7 +723,7 @@ ItemDisplay[6cb SOCK=4]: %NAME% %!tansocks!%
 ItemDisplay[6lw (NMAG OR RW) SOCK=6]: %GRAY% %NAME% %!tansocks!%
 ItemDisplay[6lw (NMAG OR RW) SOCK=0 (!INF AND !SUP)]: %GRAY% %NAME% %!tansocks!%
 //More bow bases
-ItemDisplay[WP9 (NMAG OR RW) (!SOCK=1 OR !SOCK=2) FILTERLVL<4]: %NAME% %!graysocks!%
+ItemDisplay[WP9 (NMAG OR RW) (!SOCK=1 OR !SOCK=2) FILTERLVL=1]: %NAME% %!graysocks!%
 //Infi/Insi/Pride and Obedience/Doom
 ItemDisplay[(7wc OR 7pa OR 7s8 OR 7vo OR 7h7 OR 7tr OR 7br OR 7st OR 7p7) (ETH AND (NMAG OR RW)) (SOCK=4 OR SOCK=5)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
 ItemDisplay[(7vo OR 7tr) (ETH AND !INF) AND (NMAG OR RW) SOCK=0]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
@@ -734,10 +734,11 @@ ItemDisplay[(7cr OR 7wa) (!ETH AND !INF AND !SUP) AND (NMAG OR RW) SOCK=0]: %GRA
 //Death/Oath
 ItemDisplay[(7wa OR 7fb OR 7gd) (ETH AND (NMAG OR RW)) (SOCK=4 OR SOCK=5)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
 ItemDisplay[7fb (ETH AND !INF) AND (NMAG OR RW) SOCK=0]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
-ItemDisplay[(7wa OR 7gd) (ETH AND !INF AND !SUP) AND (NMAG OR RW) SOCK=0]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
+ItemDisplay[(7wa OR 7gd or 7bf) (ETH AND !INF) AND (NMAG OR RW) SOCK=0]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
 //Breath of the Dying/Last Wish
 ItemDisplay[7cr !INF AND (NMAG OR RW) (SOCK=0 OR SOCK=6)]: %GRAY%%NAME% %!tansocks!%
 ItemDisplay[(7wa OR 7gd OR 7p7) (ETH AND !INF) AND (NMAG OR RW) (SOCK=0 OR SOCK=6)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
+ItemDisplay[(7wa OR 7gd OR 7p7) AND (NMAG OR RW) (SOCK=0 OR SOCK=6)]: %GRAY%%NAME% %!tansocks!%
 //Lawbringer
 ItemDisplay[72h (ETH AND !INF) AND (NMAG OR RW) (SOCK=0 OR SOCK=3)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
 //Chaos
@@ -772,6 +773,7 @@ ItemDisplay[WEAPON TABSK34>2]: %!shopping!% %GREEN%2-Hand 3bo Stick %!shopping!%
 ItemDisplay[EQ4 (TABSK0>2 OR TABSK2>2 OR TABSK50>2) AND IAS>19]: %!shopping!% %GREEN%3sk-20ias Gloves %!shopping!% <<notify>>
 ItemDisplay[WP13 (TABSK24>2 AND SK119>2)]: %!shopping!% %GREEN%FoH Scepter %!shopping!% <<notify>>
 ItemDisplay[WP12 MAG CHSK91>0]: %!shopping!% %GREEN%Lower Resist Wand %!shopping!% <<notify>>
+ItemDisplay[WP11 MAG CHSK53>0]: %!shopping!% %GREEN%Teleport Charges Staff %!shopping!% <<notify>>
 //LivEisJeebus shop lines big thanks to him for these lines
 ItemDisplay[CL5 (CLSK6>0 AND SK271>2)]: %!shopping!% %PURPLE%Light Claw %!shopping!% <<notify>>
 ItemDisplay[CL5 (CLSK6>1 AND SK271>1)]: %!shopping!% %PURPLE%Light Claw %!shopping!% <<notify>>

@@ -3,6 +3,13 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 6-4
+Fixes:
+Additions:
+Changes:
+Changed visibility of some runeword bases, added a few
+
+#####################################
 Update 6-1
 Fixes:
 Some claw display
