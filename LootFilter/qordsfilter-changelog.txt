@@ -3,6 +3,22 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 7-4
+Fixes:
+Additions:
+Changes:
+Tried to correct conditions where soe set or uni items were not showing possible corruption mods
+Changed visibility for some rares
+
+#####################################
+Update 6-23
+Fixes:
+Additions:
+Changes:
+Removed some skill names from display on necro heads and wands, too many extra long item names
+Changed holy sheild to staff mod to display at +1 and +2 instead of just +3
+
+#####################################
 Update 6-4
 Fixes:
 Additions:
