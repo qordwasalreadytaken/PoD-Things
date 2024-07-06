@@ -178,8 +178,8 @@ ItemDisplay[hst OR msf]: %TAN%%NAME% <:notify: NotificationColor = GOLD> {%NAME%
 ItemDisplay[QUEST]: %TAN%%NAME% <:notify: NotificationColor = GOLD> //%NOTIFY(GOLD)%
 
 //PoD Items
-ItemDisplay[SPECIAL]: %GOLD%%NAME% %CONTINUE%<<qspecials>>
-ItemDisplay[SYNTH]: %GOLD%%NAME% %CONTINUE%<<qspecials>> //failsafe forsynthesized items, the above *should* catch them though
+ItemDisplay[SPECIAL]: %GOLD%%NAME% <<qspecials>>
+ItemDisplay[SYNTH]: %GOLD%%NAME% <<qspecials>> //failsafe forsynthesized items, the above *should* catch them though
 ItemDisplay[std]: %NAME%
 ItemDisplay[cx5]: %NL%%GRAY%»     %PURPLE% %NAME% %GRAY%      «%NL%%NL% {  - Charms and Jewels%NL%  - Ethereal Items%NL%  - Socketed Items%NL%  - Non-magical Items%NL%%WHITE%Any item can be corrupted except:%NL%with another item and press the Transmute button twice.%NL%Place the Orb of Corruption%WHITE% into the Horadric Cube%WHITE%%NL%} <:notify: BorderColor = RGB(138/43/226), BorderSize = 4, BackgroundColor = RGB(128/0/128), MapIcon = 70, MapIconColor = 75, NotificationSound = corb2, NotificationColor = PURPLE>
 //ItemDisplay[cx5]: %NL%%GRAY%»     %PURPLE% %NAME% %GRAY%      «%NL%%NL% {  - Charms and Jewels%NL%  - Ethereal Items%NL%  - Socketed Items%NL%  - Non-magical Items%NL%%WHITE%Any item can be corrupted except:%NL%with another item and press the Transmute button twice.%NL%Place the Orb of Corruption%WHITE% into the Horadric Cube%WHITE%%NL%} <:notify: BorderColor = 155, BorderSize = 4, BackgroundColor = 75, MapIcon = 70, MapIconColor = 75, NotificationSound = corb2, NotificationColor = PURPLE>
@@ -241,8 +241,7 @@ ItemDisplay[jew (RARE OR MAG) ID]: %NAME%
 ItemDisplay[(7wa) MAG]: %NL% %NAME% %RED%[ort] %GRAY%[%ILVL%]%NL% <:notify: MapIcon = 66, NotificationColor = RED> {%GRAY%Ort Rune + Perfect Ruby + This Magical Item + Jewel = Crafted Blood Zerker Axe%NL%%GRAY%Horadric Cube Craft Recipe}
 //ItemDisplay[(mpi) MAG]: %NL% %NAME% %RED%[ort] %GRAY%[%ILVL%]%NL% <:notify: MapIcon = 66, NotificationColor = RED> {%GRAY%Ort Rune + Perfect Ruby + This Magical Item + Jewel = Crafted Blood Pickaxe%NL%%GRAY%Horadric Cube Craft Recipe}
 ItemDisplay[(mpi) MAG FILTERLVL<3]: %NL% %NAME% %RED%[ort] %GRAY%[%ILVL%] {%GRAY%Ort Rune + Perfect Ruby + This Magical Item + Jewel = Crafted Blood Pickaxe%NL%%GRAY%Horadric Cube Craft Recipe}
-// why is this line here?
-ItemDisplay[(ARMOR OR WEAPON OR rin OR amu) !(NMAG OR MAG OR RARE OR SET OR UNI)]: %NAME% %CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON OR rin OR amu) !(NMAG OR MAG OR RARE OR SET OR UNI)]: %NAME%
 ItemDisplay[(uvg OR xvg) MAG]: %NAME% %RED%[nef] %GRAY%[%ILVL%]{%GRAY%Nef Rune + Perfect Ruby + This Magical Item + Jewel = Crafted Blood Gloves%NL%%GRAY%Horadric Cube Craft Recipe}
 ItemDisplay[xtb MAG]: %NAME% %RED%[eth] %GRAY%[%ILVL%]{%GRAY%Eth Rune + Perfect Ruby + This Magical Item + Jewel = Crafted Blood Boots%NL%%GRAY%Horadric Cube Craft Recipe}
 ItemDisplay[(xlg OR ulg) MAG]: %NAME% %PURPLE%[ort] %GRAY%[%ILVL%]{%GRAY%Ort Rune + Perfect Amethyst + This Magical Item + Jewel = Crafted Caster Gloves%NL%%GRAY%Horadric Cube Craft Recipe}
@@ -253,8 +252,8 @@ ItemDisplay[(hbt OR xhb) MAG]: %NAME% %GREEN%[ort] %GRAY%[%ILVL%]{%GRAY%Ort Rune
 ItemDisplay[(ltp OR xtp OR utp) MAG]: %NAME% %PURPLE%[tal] %GRAY%[%ILVL%]{%GRAY%Tal Rune + Perfect Amethyst + This Magical Item + Jewel = Crafted Caster Armor%NL%%GRAY%Horadric Cube Craft Recipe}
 ItemDisplay[(sml OR xml OR uml) MAG]: %NAME% %PURPLE%[eth] %GRAY%[%ILVL%]{%GRAY%Eth Rune + Perfect Amethyst + This Magical Item + Jewel = Crafted Caster Shield%NL%%GRAY%Horadric Cube Craft Recipe}
 //Craft catch-all, always show crafterd items
-//ItemDisplay[CRAFT !SOCK=0]: %NAME% %!tansocks!% %CONTINUE%
-//ItemDisplay[CRAFT]: %NAME% %CONTINUE%
+ItemDisplay[CRAFT !SOCK=0]: %NAME% %!tansocks!% %CONTINUE%
+ItemDisplay[CRAFT]: %NAME% %CONTINUE%
 // Magic Rings and amulets
 ItemDisplay[(rin OR amu) MAG ILVL>90]: %NAME% %WHITE%[%ILVL%] %CONTINUE%
 ItemDisplay[(rin OR amu) MAG FILTERLVL=1]: %NAME% %GRAY%[%ILVL%] %CONTINUE%
@@ -767,10 +766,6 @@ ItemDisplay[uit (!INF AND ETH) AND (NMAG OR RW)  (SOCK=0 OR SOCK=4) FILTERLVL<3]
 ItemDisplay[uit (!INF AND !ETH) AND (NMAG OR RW)  (SOCK=0 OR SOCK=4) FILTERLVL<3]: %GRAY%%NAME% %!tansocks!%
 //Dream shields, tower and troll nest
 ItemDisplay[(tow OR ush) (!INF AND ETH) AND (NMAG OR RW)  (SOCK=0 OR SOCK=3) FILTERLVL<3]: %GRAY%Dream base %NAME% %!tansocks!%
-
-//Craft catch-all, always show crafterd items
-ItemDisplay[CRAFT !SOCK=0]: %NAME% %!tansocks!% %CONTINUE%
-ItemDisplay[CRAFT]: %NAME% %CONTINUE%
 
 //Shopping list
 //ItemDisplay[(WP15 OR WP17) TABSK34>2]: %!shopping!% %GREEN%3bo Stick %!shopping!% <<notify>>
