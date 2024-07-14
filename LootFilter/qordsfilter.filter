@@ -203,7 +203,7 @@ ItemDisplay[r28 OR r29 OR r33]: %NL%%GOLD%	 	 %!runename!% 	 	%NL%%NL% <<rune>>
 ItemDisplay[r30 OR r31]: %NL%%GOLD% 	  	  %!runename!%  	  	%NL%%NL% <<rune>>
 
 //Show me number of sockets on ETH AND ID items (known to be ID'd from sockets>0)
-ItemDisplay[(ARMOR OR WEAPON) ((MAG OR RARE OR SET OR UNI) AND ETH) SOCK>0]: %NAME% %GRAY%ETH %!tansocks!% %CONTINUE%
+ItemDisplay[(ARMOR OR WEAPON) (( ID MAG OR RARE OR SET OR UNI) AND ETH) SOCK>0]: %NAME% %GRAY%ETH %!tansocks!% %CONTINUE%
 //Show me number of sockets on ID items
 ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR SET OR UNI) SOCK>0]: %NAME% %!tansocks!% %CONTINUE%
 
@@ -288,8 +288,8 @@ ItemDisplay[(cm1 OR cm2 OR cm3) !UNI]: %NAME% %GRAY%[%ILVL%]
 ItemDisplay[(cm1 OR cm2 OR cm3) UNI]: %NAME% <<gguniqs>>
 
 //Changed in the latest patch, add extra visibility for sets and uniques that have been changed in patch 21
-ItemDisplay[(pae OR 9fb OR 9bl OR wsd OR 7bw OR uhg OR 6hx OR uul OR usk OR 7wc OR 9la) UNI FILTERLVL<4]: %NAME%%SAGE% { %!shugnite!% } %CONTINUE%
-ItemDisplay[(uh9 OR amc OR lbb OR tbl OR wsd OR xap OR stu OR vbt) SET FILTERLVL<4]: %NAME% { %!shugnite!% } %CONTINUE%
+ItemDisplay[(pae OR 9fb OR 9bl OR wsd OR 7bw OR uhg OR 6hx OR uul OR usk OR 7wc OR 9la) UNI FILTERLVL<4]: %NAME%%SAGE% { %!shugnite!% } 
+ItemDisplay[(uh9 OR amc OR lbb OR tbl OR wsd OR xap OR stu OR vbt) SET FILTERLVL<4]: %NAME% { %!shugnite!% } 
 //ItemDisplay[(uh9 OR amc OR lbb OR tbl OR wsd OR xap OR stu OR vbt) SET FILTERLVL<4]: %NAME% %!shugnite!% %CORAL% <-Changed by Shugnite 
 
 //Uniques
@@ -298,17 +298,17 @@ ItemDisplay[(uh9 OR amc OR lbb OR tbl OR wsd OR xap OR stu OR vbt) SET FILTERLVL
 ItemDisplay[(uui OR utu) UNI !ID]: %!qspecial!% <<qspecials>>
 //GG Uniq Items (things that trade easy)
 ItemDisplay[(ulc OR xea OR uap OR ulm OR ci3 OR xtb OR 7gw OR obf OR uvb OR uar) UNI ETH !ID]: %!gguueth!% <<gguniqs>>
-ItemDisplay[(ulc OR xea OR uap OR ulm OR ci3 OR xtb OR 7gw OR obf OR uvb OR uar) UNI ETH]: %!ethuniq!% <<gguniqs>> %CONTINUE%
+ItemDisplay[(ulc OR xea OR uap OR ulm OR ci3 OR xtb OR 7gw OR obf OR uvb OR uar) UNI ETH]: %!ethuniq!% <<gguniqs>> 
 ItemDisplay[(jew OR rin OR amu OR ulc OR xea OR urn OR uap OR ulm OR ci3 OR xtb OR uit OR 6lw OR 7gw OR 7gd OR obf OR uvb OR uar OR ucl OR 7qr OR xhn OR xh9 OR cm1 OR cm2 OR cm3) UNI !ID]: %!gguunoeth!% <<gguniqs>>
-ItemDisplay[(jew OR rin OR amu OR ulc OR xea OR urn OR uap OR ulm OR ci3 OR xtb OR uit OR 6lw OR 7gw OR 7gd OR obf OR uvb OR uar OR ucl OR 7qr OR xhn OR xh9 OR cm1 OR cm2 OR cm3) !ETH UNI]: %!ggidun!% <<gguniqs>> %CONTINUE%
+ItemDisplay[(jew OR rin OR amu OR ulc OR xea OR urn OR uap OR ulm OR ci3 OR xtb OR uit OR 6lw OR 7gw OR 7gd OR obf OR uvb OR uar OR ucl OR 7qr OR xhn OR xh9 OR cm1 OR cm2 OR cm3) !ETH UNI]: %!ggidun!% <<gguniqs>> 
 //OK UNIQUE Items ETH
 ItemDisplay[(xhn OR upl OR uld OR uow OR ama OR 6cs OR 7s8) ETH UNI !ID]: %!okuniqeth!% <:notify: NotificationColor = GOLD> //%NOTIFY(ORANGE)%
 //OK UNIQUE Items NONETH unid
 ItemDisplay[(9bs OR 6hx OR uow OR pa9 OR nea OR 7cr OR 7fl OR 7kr OR oba OR ama OR lbt OR xhb OR uhb OR xvb OR xhn OR uhm OR xh9 OR usk OR ci2 OR baa OR bac OR dra OR dre OR xhn OR xtp OR xlt OR upl OR uld OR uvg OR uhg OR utu OR zlb OR zvb OR zhb OR umc OR 6cs OR xmb OR amf OR umg OR 7s8 OR xhm OR rxb OR 8rx OR 6sw OR 9mp) UNI !ID !ETH]: %!okuniq!% <<okuniqs>>
 //OK UNIQUE Items NONETH ID'd
-ItemDisplay[(6hx OR uow OR pa9 OR nea OR 7cr OR 7fl OR 7kr OR oba OR ama OR lbt OR xhb OR uhb OR xvb OR xhn OR uhm OR xh9 OR usk OR ci2 OR baa OR bac OR dra OR dre OR xhn OR xtp OR xlt OR upl OR uld OR uvg OR uhg OR utu OR zlb OR zvb OR zhb OR umc OR 6cs OR xmb OR amf OR umg OR 7s8 OR xhm OR rxb OR 8rx OR 6sw OR 9mp) UNI !ETH]: %!okuniqid!% <<okuniqs>> %CONTINUE%
+ItemDisplay[(6hx OR uow OR pa9 OR nea OR 7cr OR 7fl OR 7kr OR oba OR ama OR lbt OR xhb OR uhb OR xvb OR xhn OR uhm OR xh9 OR usk OR ci2 OR baa OR bac OR dra OR dre OR xhn OR xtp OR xlt OR upl OR uld OR uvg OR uhg OR utu OR zlb OR zvb OR zhb OR umc OR 6cs OR xmb OR amf OR umg OR 7s8 OR xhm OR rxb OR 8rx OR 6sw OR 9mp) UNI !ETH]: %!okuniqid!% <<okuniqs>> 
 //Show me all ID'd uniques
-ItemDisplay[UNI]: %NAME% %CONTINUE% //[%CODE%]
+ItemDisplay[UNI]: %NAME% //[%CODE%]
 //Uinque catch all 
 ItemDisplay[UNI !ID ETH FILTERLVL<5]: %!ethuniq!%
 //ItemDisplay[UNI !ID]: %!uniq!% //[%CODE%]//<<unique>>
@@ -316,9 +316,9 @@ ItemDisplay[UNI !ID FILTERLVL<5]: %NAME% // [%CODE%]
 
 //Sets
 //Good set parts
-ItemDisplay[(7ma OR amu OR uar OR ci3 OR 7qr OR uth OR ulg OR xtb OR xhm OR xmg OR ult OR xhl OR 7ls OR upl) SET]: %!setmacro!% <<ggsets>> %CONTINUE%
+ItemDisplay[(7ma OR amu OR uar OR ci3 OR 7qr OR uth OR ulg OR xtb OR xhm OR xmg OR ult OR xhl OR 7ls OR upl) SET]: %!setmacro!% <<ggsets>> 
 //Set catch all
-ItemDisplay[SET FILTERLVL<5]: %NAME% %CONTINUE%// [%CODE%]
+ItemDisplay[SET FILTERLVL<5]: %NAME% // [%CODE%]
 
 //Sorceress Orbs, plague base....needs work
 //trim old lines, no need enflame-frig since pre-buff is no more
@@ -811,7 +811,7 @@ ItemDisplay[RW]: %NAME% %!tansocks!%
 
 // catch all
 ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR SET OR UNI) ID]: %NAME% %CONTINUE%//[%CODE%]
-ItemDisplay[(UNI OR SET)]: %NAME% %CONTINUE%//[%CODE%]
+ItemDisplay[(UNI OR SET) ID]: %NAME% %CONTINUE%//[%CODE%]
 
 //Show me every identified item and add corruption information
 // helms
