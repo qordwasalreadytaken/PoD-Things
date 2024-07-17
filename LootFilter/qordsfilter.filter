@@ -59,6 +59,11 @@ Sound[corb3]: "zelda2"
 //Text Macros
 //Called with %!macroname!%, %!tansocks!% for example
 TextMacro[upb4slam]: %RED%Upgrade before corrupting for chance at max sockets
+TextMacro[upb4slamsetwep1]: %RED%Upgrade (El Eth PRuby) before corrupting for chance at max sockets
+TextMacro[upb4slamsetwep2]: %RED%Upgrade (Dol Mal PRuby) before corrupting for chance at max sockets
+TextMacro[upb4slamsetarm1]: %RED%Upgrade (Eld Ith PTopaz) before corrupting for chance at max sockets
+TextMacro[upb4slamsetarm2]: %RED%Upgrade (Hel Io PTopaz) before corrupting for chance at max sockets
+
 TextMacro[pcm]: %GRAY%Possible Corruption Mods 
 TextMacro[shopping]: %RED%@@@@@  // %!shopping!%
 TextMacro[tansocks]: %TAN%[%SOCKETS%] // %!tansocks!%
@@ -75,15 +80,16 @@ TextMacro[okuniq]: %YELLOW%»%TAN%»%GRAY%»     %RED%%NAME%%GRAY%     «%TAN%«
 TextMacro[okuniqid]: %GOLD%%NAME%%NL%  // %!okuniqid!% "Ok Uniques, ID'd'"
 TextMacro[okuniqeth]: %YELLOW%»%TAN%»%GRAY%ETH»     %GOLD%%NAME%%GRAY%     «%TAN%«%YELLOW%« // %!okuniqeth!% "Ok Uniques, ethereal"
 TextMacro[setmacro]: %GREEN%    %NAME%     %GREEN% // %!setmacro!%
-TextMacro[cubesoxwep]: %NL% { Ral + Amn + P Amethyst %NL% Cube reciper for adding sockets to non-superior weapons %NL% }
-TextMacro[cubesoxarm]: %NL% { Tal + Thul + P Topaz %NL% Cube reciper for adding sockets to non-superior armor %NL% }
-TextMacro[cubesoxhat]: %NL% { Ral + Thul + P Sapphire %NL% Cube reciper for adding sockets to non-superior helmets %NL% }
-TextMacro[cubesoxshld]: %NL% { Tal + Amn + P Ruby %NL% Cube reciper for adding sockets to non-superior shields %NL% }
+TextMacro[cubesoxwep]: %NL% { Ral + Amn + P Amethyst %NL% Cube recipe for adding sockets to non-superior weapons %NL% }  // %!cubesoxwep!%
+TextMacro[cubesoxarm]: %NL% { Tal + Thul + P Topaz %NL% Cube recipe for adding sockets to non-superior armor %NL% }  // %!cubesoxarm!%
+TextMacro[cubesoxhat]: %NL% { Ral + Thul + P Sapphire %NL% Cube recipe for adding sockets to non-superior helmets %NL% } // %!cubesoxhat!%
+TextMacro[cubesoxshld]: %NL% { Tal + Amn + P Ruby %NL% Cube recipe for adding sockets to non-superior shields %NL% } // %!cubesoxshld!%
+TextMacro[cubesox]: %NL% Weapons: Ral + Amn + P Amethyst %NL% Armor: Tal + Thul + P Topaz %NL% Helmets: Ral + Thul + P Sapphire %NL% Shields: Tal + Amn + P Ruby %NL% Cube recipies for adding sockets to: 
 TextMacro[shugnite]: %NL% %SAGE%  { Changed in patch Shugnite } // %!shugnite!%
 
 //Custom display styles
 //inline example: <:pelt: BorderColor = 99, BorderSize = 4, NotificationSound = SoundFile>
-//called with <<rune>> and <<qspecials>>
+//called with <<rune>> and <<qspecials>> for example
 ItemStyle[rare]: NotificationColor = YELLOW //<<rare>>
 ItemStyle[rune]: MapIcon = 75, MapIconColor = 5, BorderColor = 111, BorderSize = 2, BackgroundColor = 75, NotificationColor = PURPLE, NotificationPriority = HIGH, NotificationSound = corb2, NotificationSoundPriority = HIGH //<<rune>>
 //ItemStyle[qspecials]: MapIcon = 4, MapIconColor = 5, BorderColor = 111, BorderSize = 2, BackgroundColor = 197, NotificationColor = PURPLE, NotificationPriority = MEDIUM, NotificationSound = "@local\sfx\Common\Cain\Cain_hello", NotificationSoundPriority = HIGH
@@ -174,6 +180,8 @@ ItemDisplay[leg SOCK>0]: %NAME% %!stripedsocks!%  <<qspecials>>
 ItemDisplay[leg]: %NAME%  <<qspecials>>
 // Alt text for horadric staff
 ItemDisplay[hst OR msf]: %TAN%%NAME% <:notify: NotificationColor = GOLD> {%NAME% %DGREEN%[Circle]                [Circle&Crescent]%NL%[Crescent]             [Triangle]%NL%[Square]     [Arrows]%NL%[Star]%NL%%ORANGE%DURIEL TOMB ORDER:} //%NOTIFY(GOLD)%
+// Alt test for horadric cube
+ItemDisplay[box]: %TAN%%NAME% { %!cubesox!% } <:notify: NotificationColor = GOLD> 
 // Other quest
 ItemDisplay[QUEST]: %TAN%%NAME% <:notify: NotificationColor = GOLD> //%NOTIFY(GOLD)%
 
@@ -288,8 +296,8 @@ ItemDisplay[(cm1 OR cm2 OR cm3) !UNI]: %NAME% %GRAY%[%ILVL%]
 ItemDisplay[(cm1 OR cm2 OR cm3) UNI]: %NAME% <<gguniqs>>
 
 //Changed in the latest patch, add extra visibility for sets and uniques that have been changed in patch 21
-ItemDisplay[(pae OR 9fb OR 9bl OR wsd OR 7bw OR uhg OR 6hx OR uul OR usk OR 7wc OR 9la) UNI FILTERLVL<4]: %NAME%%SAGE% { %!shugnite!% } 
-ItemDisplay[(uh9 OR amc OR lbb OR tbl OR wsd OR xap OR stu OR vbt) SET FILTERLVL<4]: %NAME% { %!shugnite!% } 
+ItemDisplay[(pae OR 9fb OR 9bl OR wsd OR 7bw OR uhg OR 6hx OR uul OR usk OR 7wc OR 9la) UNI !ID FILTERLVL<4]: %NAME%%SAGE% { %!shugnite!% } //%CONTINUE%
+ItemDisplay[(uh9 OR amc OR lbb OR tbl OR wsd OR xap OR stu OR vbt) SET !ID FILTERLVL<4]: %NAME% { %!shugnite!% } //%CONTINUE%
 //ItemDisplay[(uh9 OR amc OR lbb OR tbl OR wsd OR xap OR stu OR vbt) SET FILTERLVL<4]: %NAME% %!shugnite!% %CORAL% <-Changed by Shugnite 
 
 //Uniques
@@ -300,15 +308,15 @@ ItemDisplay[(uui OR utu) UNI !ID]: %!qspecial!% <<qspecials>>
 ItemDisplay[(ulc OR xea OR uap OR ulm OR ci3 OR xtb OR 7gw OR obf OR uvb OR uar) UNI ETH !ID]: %!gguueth!% <<gguniqs>>
 ItemDisplay[(ulc OR xea OR uap OR ulm OR ci3 OR xtb OR 7gw OR obf OR uvb OR uar) UNI ETH]: %!ethuniq!% <<gguniqs>> 
 ItemDisplay[(jew OR rin OR amu OR ulc OR xea OR urn OR uap OR ulm OR ci3 OR xtb OR uit OR 6lw OR 7gw OR 7gd OR obf OR uvb OR uar OR ucl OR 7qr OR xhn OR xh9 OR cm1 OR cm2 OR cm3) UNI !ID]: %!gguunoeth!% <<gguniqs>>
-ItemDisplay[(jew OR rin OR amu OR ulc OR xea OR urn OR uap OR ulm OR ci3 OR xtb OR uit OR 6lw OR 7gw OR 7gd OR obf OR uvb OR uar OR ucl OR 7qr OR xhn OR xh9 OR cm1 OR cm2 OR cm3) !ETH UNI]: %!ggidun!% <<gguniqs>> 
+ItemDisplay[(jew OR rin OR amu OR ulc OR xea OR urn OR uap OR ulm OR ci3 OR xtb OR uit OR 6lw OR 7gw OR 7gd OR obf OR uvb OR uar OR ucl OR 7qr OR xhn OR xh9 OR cm1 OR cm2 OR cm3) !ETH UNI]: %!ggidun!% <<gguniqs>> %CONTINUE%
 //OK UNIQUE Items ETH
 ItemDisplay[(xhn OR upl OR uld OR uow OR ama OR 6cs OR 7s8) ETH UNI !ID]: %!okuniqeth!% <:notify: NotificationColor = GOLD> //%NOTIFY(ORANGE)%
 //OK UNIQUE Items NONETH unid
 ItemDisplay[(9bs OR 6hx OR uow OR pa9 OR nea OR 7cr OR 7fl OR 7kr OR oba OR ama OR lbt OR xhb OR uhb OR xvb OR xhn OR uhm OR xh9 OR usk OR ci2 OR baa OR bac OR dra OR dre OR xhn OR xtp OR xlt OR upl OR uld OR uvg OR uhg OR utu OR zlb OR zvb OR zhb OR umc OR 6cs OR xmb OR amf OR umg OR 7s8 OR xhm OR rxb OR 8rx OR 6sw OR 9mp) UNI !ID !ETH]: %!okuniq!% <<okuniqs>>
 //OK UNIQUE Items NONETH ID'd
-ItemDisplay[(6hx OR uow OR pa9 OR nea OR 7cr OR 7fl OR 7kr OR oba OR ama OR lbt OR xhb OR uhb OR xvb OR xhn OR uhm OR xh9 OR usk OR ci2 OR baa OR bac OR dra OR dre OR xhn OR xtp OR xlt OR upl OR uld OR uvg OR uhg OR utu OR zlb OR zvb OR zhb OR umc OR 6cs OR xmb OR amf OR umg OR 7s8 OR xhm OR rxb OR 8rx OR 6sw OR 9mp) UNI !ETH]: %!okuniqid!% <<okuniqs>> 
+ItemDisplay[(6hx OR uow OR pa9 OR nea OR 7cr OR 7fl OR 7kr OR oba OR ama OR lbt OR xhb OR uhb OR xvb OR xhn OR uhm OR xh9 OR usk OR ci2 OR baa OR bac OR dra OR dre OR xhn OR xtp OR xlt OR upl OR uld OR uvg OR uhg OR utu OR zlb OR zvb OR zhb OR umc OR 6cs OR xmb OR amf OR umg OR 7s8 OR xhm OR rxb OR 8rx OR 6sw OR 9mp) UNI !ETH]: %!okuniqid!% <<okuniqs>> %CONTINUE%
 //Show me all ID'd uniques
-ItemDisplay[UNI]: %NAME% //[%CODE%]
+ItemDisplay[UNI]: %NAME% %CONTINUE%//[%CODE%]
 //Uinque catch all 
 ItemDisplay[UNI !ID ETH FILTERLVL<5]: %!ethuniq!%
 //ItemDisplay[UNI !ID]: %!uniq!% //[%CODE%]//<<unique>>
@@ -316,9 +324,9 @@ ItemDisplay[UNI !ID FILTERLVL<5]: %NAME% // [%CODE%]
 
 //Sets
 //Good set parts
-ItemDisplay[(7ma OR amu OR uar OR ci3 OR 7qr OR uth OR ulg OR xtb OR xhm OR xmg OR ult OR xhl OR 7ls OR upl) SET]: %!setmacro!% <<ggsets>> 
+ItemDisplay[(7ma OR amu OR uar OR ci3 OR 7qr OR uth OR ulg OR xtb OR xhm OR xmg OR ult OR xhl OR 7ls OR upl) SET]: %!setmacro!% <<ggsets>> %CONTINUE%
 //Set catch all
-ItemDisplay[SET FILTERLVL<5]: %NAME% // [%CODE%]
+ItemDisplay[SET FILTERLVL<5]: %NAME% %CONTINUE%// [%CODE%]
 
 //Sorceress Orbs, plague base....needs work
 //trim old lines, no need enflame-frig since pre-buff is no more
@@ -696,12 +704,9 @@ ItemDisplay[CL5 !INF !NORM NMAG (SK261>2 OR SK262>2 OR SK263>2 OR SK264>2 OR SK2
 
 
 //Other RuneWord Bases
-//Aramex special, legendary  mallet and boneweave
+//Aramex special, legendary  mallet and boneweave, mat spear and mat pike
 ItemDisplay[(uhn OR 7wh) (NMAG OR RW) (SOCK=0 OR SOCK>2) FILTERLVL<3]: %NAME% %!tansocks!%
 ItemDisplay[(ame OR amd) (NMAG OR RW) (SOCK=0 OR SOCK>3) FILTERLVL<5]: %NAME% %!tansocks!%
-//Other requests
-ItemDisplay[(6cs OR 6ws) NMAG ETH (SOCK=0 OR SOCK=4) FILTERLVL<3]: %NAME% %!graysocks!%
-ItemDisplay[NMAG WP1 (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!%
 //Spirit Swords
 ItemDisplay[(crs OR bsd OR lsd OR 9cr) (ETH AND (NMAG OR RW)) SOCK=4 FILTERLVL<3]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!graysocks!%
 ItemDisplay[(crs OR bsd OR lsd OR 9cr) (NMAG OR RW) SOCK=4 FILTERLVL<3]: %NAME% %!graysocks!%
@@ -716,17 +721,19 @@ ItemDisplay[crs (NMAG OR RW) SOCK=5 FILTERLVL<3]: %NAME% %!graysocks!%
 ItemDisplay[(cst OR bst OR 8cs OR 8bs OR 6cs OR 6bs) (NMAG OR RW) SK58>2 (SOCK=0 OR SOCK=4)]: %LIGHT_GRAY%+3 ES %NAME% %!tansocks!% //redundant
 ItemDisplay[(wst OR 8ws OR 6ws) (NMAG OR RW) SK58>2 SOCK=0 (!INF AND !SUP)]: %GRAY%[%WHITE%+3 to tell Qord he dum2%GRAY%] %NAME% %!tansocks!% //redundant
 ItemDisplay[(wst OR 8ws OR 6ws) (NMAG OR RW) SK58>2 SOCK=4]: %GRAY%[%WHITE%+3 to tell Qord he dum3%GRAY%] %NAME% %!tansocks!% //redundant
-//Faith
+//Faith 
 ItemDisplay[amc (NMAG OR RW) TABSK0>2 SOCK=4]: %GRAY%[%WHITE%3bow%GRAY%] %NAME% %!tansocks!%
 ItemDisplay[amc (NMAG OR RW) TABSK0>2 SOCK=0 (!INF AND !SUP)]: %GRAY%[%WHITE%3bow%GRAY%] %NAME% %!graysocks!%
 ItemDisplay[6cb SOCK=4]: %NAME% %!tansocks!%
 //botd bow
 ItemDisplay[6lw (NMAG OR RW) SOCK=6]: %GRAY% %NAME% %!tansocks!%
-ItemDisplay[6lw (NMAG OR RW) SOCK=0 (!INF AND !SUP)]: %GRAY% %NAME% %!tansocks!%
+ItemDisplay[6lw (NMAG OR RW) SOCK=0 (!INF AND !SUP)]: %GRAY% %NAME% %!tansocks!% 
 //More bow bases
+ItemDisplay[WP9 (NMAG OR RW) TABSK0>2 (!SOCK=1 OR !SOCK=2) FILTERLVL<4]: %GRAY%[%WHITE%3bow%GRAY%] %NAME% %!graysocks!%
 ItemDisplay[WP9 (NMAG OR RW) (!SOCK=1 OR !SOCK=2) FILTERLVL=1]: %NAME% %!graysocks!%
 //Infi/Insi/Pride and Obedience/Doom
 ItemDisplay[(7wc OR 7pa OR 7s8 OR 7vo OR 7h7 OR 7tr OR 7br OR 7st OR 7p7) (ETH AND (NMAG OR RW)) (SOCK=4 OR SOCK=5)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
+ItemDisplay[(7wc OR 7pa OR 7s8 OR 7vo OR 7h7 OR 7tr OR 7br OR 7st OR 7p7) (NMAG OR RW) (SOCK=4 OR SOCK=5)]: %GRAY% %NAME% %!tansocks!%
 ItemDisplay[(7vo OR 7tr) (ETH AND !INF) AND (NMAG OR RW) SOCK=0]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
 ItemDisplay[(7wc OR 7pa OR 7s8 OR 7h7 OR 7br OR 7st) (ETH AND !INF AND !SUP) AND (NMAG OR RW) SOCK=0]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
 //Grief/Beast/Passion
@@ -738,8 +745,8 @@ ItemDisplay[7fb (ETH AND !INF) AND (NMAG OR RW) SOCK=0]: %GRAY%[%WHITE%eth%GRAY%
 ItemDisplay[(7wa OR 7gd) (ETH AND !INF AND !SUP) AND (NMAG OR RW) SOCK=0]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
 //Breath of the Dying/Last Wish
 ItemDisplay[7cr !INF AND (NMAG OR RW) (SOCK=0 OR SOCK=6)]: %GRAY%%NAME% %!tansocks!%
-ItemDisplay[(7wa OR 7gd OR 7p7) (ETH AND !INF) AND (NMAG OR RW) (SOCK=0 OR SOCK=6)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
-ItemDisplay[(7wa OR 7gd OR 7p7) AND (NMAG OR RW) (SOCK=0 OR SOCK=6)]: %GRAY%%NAME% %!tansocks!%
+ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) (ETH AND !INF) AND (NMAG OR RW) (SOCK=0 OR SOCK=6)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
+ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) AND (NMAG OR RW) (SOCK=0 OR SOCK=6)]: %GRAY%%NAME% %!tansocks!%
 //Lawbringer
 ItemDisplay[72h (ETH AND !INF) AND (NMAG OR RW) (SOCK=0 OR SOCK=3)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
 //Chaos
@@ -753,8 +760,14 @@ ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw 
 ItemDisplay[xtp !ETH AND (NMAG OR RW) SOCK=2]: %NAME% %!tansocks!%
 ItemDisplay[(xtp OR utp OR uui) (!INF AND !ETH) AND (NMAG OR RW) (SOCK=0 OR SOCK>2)]: %GRAY%%NAME% %!tansocks!%
 ItemDisplay[EQ2 ELT ETH NMAG (SOCK=0 OR SOCK>2)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
+ItemDisplay[EQ2 EXC ETH NMAG (SOCK=0 OR SOCK>2)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
+ItemDisplay[EQ2 ELT NMAG (SOCK=0 OR SOCK>2) FILTERLVL<4]: %GRAY% %NAME% %!graysocks!%
+ItemDisplay[EQ2 EXC NMAG (SOCK=0 OR SOCK>2) FILTERLVL<3]: %GRAY% %NAME% %!graysocks!%
+
 //Helmets
 ItemDisplay[(ci3 OR uh9) (!INF AND !ETH) AND (NMAG OR RW) SOCK=3]: %NAME% %!tansocks!%
+ItemDisplay[uap (NMAG OR RW) (SOCK=0 OR SOCK>2) FILTERLVL<4]: %NAME% %!tansocks!%
+
 //Shields
 ItemDisplay[(pab OR pac) (!INF AND ETH) AND (NMAG OR RW) (SOCK=0 OR SOCK=4) RES>34]: %GRAY%[%WHITE%Eth%GRAY%][%WHITE%Resists%GRAY%] %NAME% %!tansocks!%
 ItemDisplay[(pab OR pac) (!INF AND !ETH) AND (NMAG OR RW) (SOCK=0 OR SOCK>2) RES>34]: %GRAY%[%WHITE%Resists%GRAY%] %NAME% %!tansocks!%
@@ -765,7 +778,15 @@ ItemDisplay[uit !ETH NMAG (SOCK=4 OR SOCK=0) STAT91=-10]: %GRAY%[%WHITE%-10% Req
 ItemDisplay[uit (!INF AND ETH) AND (NMAG OR RW)  (SOCK=0 OR SOCK=4) FILTERLVL<3]: %GRAY%[%WHITE%Eth%GRAY%] %NAME% %!tansocks!%
 ItemDisplay[uit (!INF AND !ETH) AND (NMAG OR RW)  (SOCK=0 OR SOCK=4) FILTERLVL<3]: %GRAY%%NAME% %!tansocks!%
 //Dream shields, tower and troll nest
-ItemDisplay[(tow OR ush) (!INF AND ETH) AND (NMAG OR RW)  (SOCK=0 OR SOCK=3) FILTERLVL<3]: %GRAY%Dream base %NAME% %!tansocks!%
+ItemDisplay[(tow OR ush) (!INF AND !ETH) AND (NMAG OR RW) (SOCK=0 OR SOCK=3) FILTERLVL<3]: %GRAY% %NAME% %!tansocks!%
+// Other shields
+ItemDisplay[(EQ3) AND (NMAG OR RW)  (SOCK=0 OR SOCK>1) FILTERLVL=1]: %GRAY% %NAME% %!graysocks!%
+
+//Other requests, eth elder & archon staff, axes, elite 4os swords
+ItemDisplay[(6cs OR 6ws) NMAG ETH (SOCK=0 OR SOCK=4) FILTERLVL<3]: %NAME% %!graysocks!%
+ItemDisplay[NMAG WP1 (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!%
+ItemDisplay[(WP16 OR WP15) (ELT OR EXC) NMAG (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!% //are wp15, wp16, and wp17 working yet??
+//ItemDisplay[WP3 ELT NMAG (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!%
 
 //Shopping list
 //ItemDisplay[(WP15 OR WP17) TABSK34>2]: %!shopping!% %GREEN%3bo Stick %!shopping!% <<notify>>
@@ -810,36 +831,45 @@ ItemDisplay[UNI AND ETH AND SOCK=0]: %GRAY%ETH %GOLD%%NAME%
 ItemDisplay[RW]: %NAME% %!tansocks!%
 
 // catch all
-ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR SET OR UNI) ID]: %NAME% %CONTINUE%//[%CODE%]
-ItemDisplay[(UNI OR SET) ID]: %NAME% %CONTINUE%//[%CODE%]
+//ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR SET OR UNI) ID]: %NAME% %CONTINUE%//[%CODE%]
+//ItemDisplay[(UNI OR SET) ID]: %NAME% %CONTINUE%//[%CODE%]
 
 //Show me every identified item and add corruption information
-// helms
+//set upgrade info
+//ItemDisplay[SET WEAPON NORM ID]: %NAME% {%!upb4slamsetwep1!%} %CONTINUE%
+//ItemDisplay[SET WEAPON EXC ID]: %NAME% {%!upb4slamsetwep2!%} %CONTINUE%
+//ItemDisplay[SET ARMOR NORM ID]: %NAME% {%!upb4slamsetarm1!%} %CONTINUE%
+//ItemDisplay[SET ARMOR EXC ID]: %NAME% {%!upb4slamsetarm2!%} %CONTINUE%
+// helms   
 ItemDisplay[(bhm OR xh9 OR ci0 OR ci1) (!NMAG AND !MAG) !ETH SOCK=0]: %NAME%{%!upb4slam!% %NL%%GRAY% Piercing 15-20% | Life 10-15 | LGOH Melee 10-14, Ranged 5-10 | Energy 5-15 | Strength 5-15 %NL% %!pcm!%}
-ItemDisplay[EQ1 (RARE OR SET OR UNI) ID !ETH SOCK=0]:%NAME%{%GRAY% Piercing 15-20% | Life 10-15 | LGOH MR5-10 | Energy 5-15 | Strength 5-15 %NL% %!pcm!%}
+ItemDisplay[EQ1 (RARE OR SET OR UNI OR CRAFT) ID !ETH SOCK=0]:%NAME%{%GRAY% Piercing 15-20% | Life 10-15 | LGOH MR5-10 | Energy 5-15 | Strength 5-15 %NL% %!pcm!%}
 //body armor
 ItemDisplay[(qui OR lea OR hla OR stu OR rng OR scl OR brs OR chn OR spl OR ltp OR fld OR plt OR xui OR xea OR xla OR xtu OR xng OR xcl OR xrs OR xhn OR xpl OR xlt) (!NMAG AND !MAG) !ETH SOCK=0]: %NAME%{%!upb4slam!% %NL%%GRAY% IAS 10% | Enh Defense 15-20% | AR 10-20% | FCR 10% | Max Life +2% %NL% %!pcm!%}
-ItemDisplay[EQ2 (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% IAS 10% | Enh Def 15-20% | AR 10-20% | FCR 10% | Max Life +2% %NL% %!pcm!%}
+ItemDisplay[EQ2 (RARE OR SET OR UNI OR CRAFT) ID]:%NAME%{%GRAY% IAS 10% | Enh Def 15-20% | AR 10-20% | FCR 10% | Max Life +2% %NL% %!pcm!%}
 // shield
 ItemDisplay[(buc OR kit OR spk OR tow OR bsh OR xuc OR xpk OR xit OR xsh OR xow OR xts) (!NMAG AND !MAG) !ETH SOCK=0]: %NAME%{%!upb4slam!% %NL%%GRAY% Block 10% | Fire Damage 10% | Cold Damage 10% | Light Damage 10% | Poison Damage 10% %NL% %!pcm!%}
-ItemDisplay[EQ3 (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% Block 10% | Fire Dam 10% | Cold Dam 10% | Light Dam 10% | Psn Dam 10% %NL% %!pcm!%}
+ItemDisplay[EQ3 (RARE OR SET OR UNI OR CRAFT) ID]:%NAME%{%GRAY% Block 10% | Fire Dam 10% | Cold Dam 10% | Light Dam 10% | Psn Dam 10% %NL% %!pcm!%}
 //weapons
 ItemDisplay[(9ga OR spc OR wnd OR ywn OR bwn OR gwn OR ktr OR wrb OR xtp OR xld OR xlt OR 9wn OR 9yw OR 9bw OR 9gw OR 9wb) (!NMAG AND !MAG) !ETH SOCK=0]: %NAME%{%!upb4slam!% %NL%%GRAY% Enh Damage 35-50% | Deadly Strike 10% | Max Damage Per Level | Crushing Blow 20% | IAS 10-15% %NL% %!pcm!%}
-ItemDisplay[WEAPON (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% Enh Dam 35-50% | Deadly Strike 10% | Max Dam Clvl | CB 20% | IAS 10-15% %NL% %!pcm!%}
+ItemDisplay[WEAPON (RARE OR SET OR UNI OR CRAFT) ID]:%NAME%{%GRAY% Enh Dam 35-50% | Deadly Strike 10% | Max Dam Clvl | CB 20% | IAS 10-15% %NL% %!pcm!%}
 //boots
-ItemDisplay[EQ5 (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% Fire Res 10-20% | All Res 5-10% | Dex 5-15 | Light Res 10-20% | Cooldown -10% %NL% %!pcm!%}
+ItemDisplay[EQ5 (RARE OR SET OR UNI OR CRAFT) ID]:%NAME%{%GRAY% Fire Res 10-20% | All Res 5-10% | Dex 5-15 | Light Res 10-20% | Cooldown -10% %NL% %!pcm!%}
 //gloves
-ItemDisplay[EQ4 (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% IAS 10% | Cold Res 10-20% | All Res 5-10% | LGOH M5-10, R5-10 | Psn Res 10-20% %NL% %!pcm!%}
+ItemDisplay[EQ4 (RARE OR SET OR UNI OR CRAFT) ID]:%NAME%{%GRAY% IAS 10% | Cold Res 10-20% | All Res 5-10% | LGOH M5-10, R5-10 | Psn Res 10-20% %NL% %!pcm!%}
 //belt
 //ItemDisplay[EQ6 (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% Pierce 8% | Max Fire 2% | Max Cold 2% | Max Light 2% | Max Poison 2% %NL% %!pcm!%}
-ItemDisplay[EQ6 (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% +10% Faster Casting | +10% Faster Attacks | +75% Attack Rating Bonus %NL% Attack Rating Per Level (2 per) | Piercing Attack 8% %NL% %!pcm!%}
+ItemDisplay[EQ6 (RARE OR SET OR UNI OR CRAFT) ID]:%NAME%{%GRAY% +10% Faster Casting | +10% Faster Attacks | +75% Attack Rating Bonus %NL% Attack Rating Per Level (2 per) | Piercing Attack 8% %NL% %!pcm!%}
 //amulet
-ItemDisplay[amu (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% All Res 5% | +1 All Skills | Regen Mana 15% | MF 10% | Life 12-18 %NL% %!pcm!%}
+ItemDisplay[amu (RARE OR SET OR UNI OR CRAFT) ID]:%NAME%{%GRAY% All Res 5% | +1 All Skills | Regen Mana 15% | MF 10% | Life 12-18 %NL% %!pcm!%}
 //ring
-ItemDisplay[rin (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% FCR 10% | Faster RW 10% | Life 15 | PDR 5-6% | MF 10% %NL% %!pcm!%}
+ItemDisplay[rin (RARE OR SET OR UNI OR CRAFT) ID]:%NAME%{%GRAY% FCR 10% | Faster RW 10% | Life 15 | PDR 5-6% | MF 10% %NL% %!pcm!%}
 //bolt-arrow
 //ItemDisplay[(aq2 OR cq2) (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% All Res 5% | LGOH 4-6 | MGOH 2-4 | IAS 10% | Vita 5-15% %NL% %!pcm!%}
 ItemDisplay[(aq2 OR cq2) (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% All Res 5% | LGOH 4-6 | MGOH 2-4 | IAS 10% | +1 to All Skills %NL% %!pcm!%}
+
+// catch all
+ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR SET OR UNI OR CRAFT) ID]: %NAME% //%CONTINUE%//[%CODE%]
+ItemDisplay[(UNI OR SET OR CRAFT) ID]: %NAME% //%CONTINUE%//[%CODE%]
 
 //Class items  cl1 Druid pelts, cl2 barb helms, cl5 assassin weapons, cl6 sorc orbs, cl7 zon weapons, wp6 javelins, wp12 wands, wsp war scepters, 9ws divine scepter, 7ws caduceus
 ItemDisplay[(CL1 OR CL2 OR CL5 OR CL6 OR WP12 OR WP6 OR CL7) (FILTERLVL=1) MAG ETH]: %GRAY%ETH %BLUE%%NAME%
