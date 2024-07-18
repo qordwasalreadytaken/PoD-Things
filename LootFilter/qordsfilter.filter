@@ -783,7 +783,7 @@ ItemDisplay[(tow OR ush) (!INF AND !ETH) AND (NMAG OR RW) (SOCK=0 OR SOCK=3) FIL
 ItemDisplay[(EQ3) AND (NMAG OR RW)  (SOCK=0 OR SOCK>1) FILTERLVL=1]: %GRAY% %NAME% %!graysocks!%
 
 //Other requests, eth elder & archon staff, axes, elite 4os swords
-ItemDisplay[(6cs OR 6ws) NMAG ETH (SOCK=0 OR SOCK=4) FILTERLVL<3]: %NAME% %!graysocks!%
+ItemDisplay[(6cs OR 6ws) NMAG ETH (SOCK=0 OR SOCK>3) FILTERLVL<3]: %NAME% %!graysocks!%
 ItemDisplay[NMAG WP1 (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!%
 ItemDisplay[(WP16 OR WP15) (ELT OR EXC) NMAG (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!% //are wp15, wp16, and wp17 working yet??
 //ItemDisplay[WP3 ELT NMAG (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!%
@@ -890,26 +890,26 @@ ItemDisplay[isc FILTERLVL=1]: %WHITE% ID
 
 //EVERYTHING ELSE
 // If you're under level 31, show all pelts, barb helms, necro shields & wands, sorc orbs, staves, and scepters with more than 1 socket
-ItemDisplay[(CL1 OR CL2 OR CL4 OR CL6 OR WP11 OR WP12 OR WP13) NMAG ETH CLVL<31 SOCK>0]: %GRAY%ETH %NAME% %!tansocks!%
+ItemDisplay[(CL1 OR CL2 OR CL4 OR CL6 OR WP11 OR WP12 OR WP13) NMAG ETH CLVL<31 SOCK>0]: %GRAY%ETH %NAME% %!graysocks!%
 ItemDisplay[(CL1 OR CL2 OR CL4 OR CL6 OR WP11 OR WP12 OR WP13) NMAG ETH CLVL<31]: %GRAY%ETH %NAME%
-ItemDisplay[(CL1 OR CL2 OR CL4 OR CL6 OR WP11 OR WP12 OR WP13) NMAG CLVL<31 SOCK>0]: %NAME% %!tansocks!%
+ItemDisplay[(CL1 OR CL2 OR CL4 OR CL6 OR WP11 OR WP12 OR WP13) NMAG CLVL<31 SOCK>0]: %NAME% %!graysocks!%
 ItemDisplay[(CL1 OR CL2 OR CL4 OR CL6 OR WP11 OR WP12 OR WP13) NMAG CLVL<31]: %NAME% 
 // If you're under level 60 and filterlevel is less than 4, show all magic and rare aweapons and armor 
 ItemDisplay[(ARMOR OR WEAPON) MAG ETH FILTERLVL<4 CLVL<60]: %GRAY%ETH %BLUE%%NAME%
 ItemDisplay[(ARMOR OR WEAPON) RARE ETH FILTERLVL<4 CLVL<60]: %GRAY%ETH %YELLOW%%NAME%
 ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE) FILTERLVL<4 CLVL<60]: %NAME%
 // If you're under level 40, show all non-etheral and non-inferior weapons and armor that have more than one socket 
-ItemDisplay[(ARMOR OR WEAPON) NMAG AND (!ETH AND !INF) SOCK>1 CLVL<40]: %GRAY%%NAME% %!tansocks!%
+ItemDisplay[(ARMOR OR WEAPON) NMAG AND (!ETH AND !INF) SOCK>1 CLVL<40]: %GRAY%%NAME% %!graysocks!%
 // If you're under level 60, show all 4 socket weapons that are eth and not inferior 
-ItemDisplay[WEAPON NMAG AND (ETH AND !INF) SOCK=4 CLVL<60]: %GRAY%ETH %NAME% %!tansocks!%
+ItemDisplay[WEAPON NMAG AND (ETH AND !INF) SOCK=4 CLVL<60]: %GRAY%ETH %NAME% %!graysocks!%
 // If you're between levels 40 and 80, show all exceptional and elite weapons and armor that are not eth and not inferior and have more than 1 socket 
-ItemDisplay[(ARMOR OR WEAPON) (EXC OR ELT) NMAG AND (!ETH AND !INF) SOCK>1 CLVL>39 AND CLVL<81]: %NAME% %!tansocks!%
+ItemDisplay[(ARMOR OR WEAPON) (EXC OR ELT) NMAG AND (!ETH AND !INF) SOCK>1 CLVL>39 AND CLVL<81]: %NAME% %!graysocks!%
 // Hide all inferior weapons and armor 
 ItemDisplay[(ARMOR OR WEAPON) INF]:
 // If you're under level 19, show eth and non eth weapons and armor, and tell us if they have sockets 
-ItemDisplay[(ARMOR OR WEAPON) ETH SOCK>0 CLVL<19]: %GRAY%ETH %NAME% %!tansocks!%
+ItemDisplay[(ARMOR OR WEAPON) ETH SOCK>0 CLVL<19]: %GRAY%ETH %NAME% %!graysocks!%
 ItemDisplay[(ARMOR OR WEAPON) ETH CLVL<19]: %GRAY%ETH %NAME%
-ItemDisplay[(ARMOR OR WEAPON) SOCK>0 CLVL<19]: %NAME% %!tansocks!%
+ItemDisplay[(ARMOR OR WEAPON) SOCK>0 CLVL<19]: %NAME% %!graysocks!%
 // If you're above level 18, hide all other weapons and armor 
 ItemDisplay[(ARMOR OR WEAPON) CLVL>18]:
 
