@@ -324,7 +324,7 @@ ItemDisplay[UNI !ID FILTERLVL<5]: %NAME% // [%CODE%]
 
 //Sets
 //Good set parts
-ItemDisplay[(7ma OR amu OR uar OR ci3 OR 7qr OR uth OR ulg OR xtb OR xhm OR xmg OR ult OR xhl OR 7ls OR upl) SET]: %!setmacro!% <<ggsets>> %CONTINUE%
+ItemDisplay[(7ma OR amu OR uar OR ci3 OR 7qr OR uth OR ulg OR xtb OR xhm OR xmg OR ult OR xhl OR 7ls OR upl) SET]: %!setmacro!% <<ggsets>> //%CONTINUE%
 //Set catch all
 ItemDisplay[SET FILTERLVL<5]: %NAME% %CONTINUE%// [%CODE%]
 
