@@ -133,9 +133,9 @@ ItemDisplay[GOLD>5000 CLVL>79]: %NAME%
 //Pots
 ItemDisplay[rvl]: %PURPLE%R %WHITE%70% //%NOTIFYSOUND(corb3)%
 ItemDisplay[rvs]: %PURPLE%r %WHITE%35%
-ItemDisplay["Super Healing Potion" AND CHARSTAT(6)<800]: %RED%! Low Health ! %WHITE% Hp
+ItemDisplay["Super Healing Potion" AND CHARSTAT(6)<200]: %RED%! Low Health ! %WHITE% Hp
 ItemDisplay["Super Healing Potion"]:  %RED%!%WHITE%Hp
-ItemDisplay["Super Mana Potion" AND CHARSTAT(8)<300]: %BLUE%! Low Mana ! %WHITE% Mp
+ItemDisplay["Super Mana Potion" AND CHARSTAT(8)<20]: %BLUE%! Low Mana ! %WHITE% Mp
 ItemDisplay["Super Mana Potion"]: %BLUE%!%WHITE%Mp
 ItemDisplay[hp1 FILTERLVL<4 DIFFICULTY=0]: %RED%!%WHITE%minor hp
 ItemDisplay[hp2 FILTERLVL<4 DIFFICULTY=0]: %RED%!%WHITE%light hp
