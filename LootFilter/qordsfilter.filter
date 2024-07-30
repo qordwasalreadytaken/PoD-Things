@@ -133,9 +133,9 @@ ItemDisplay[GOLD>5000 CLVL>79]: %NAME%
 //Pots
 ItemDisplay[rvl]: %PURPLE%R %WHITE%70% //%NOTIFYSOUND(corb3)%
 ItemDisplay[rvs]: %PURPLE%r %WHITE%35%
-ItemDisplay["Super Healing Potion" AND CHARSTAT(6)<200]: %RED%! Low Health ! %WHITE% Hp
+ItemDisplay["Super Healing Potion" AND CHARSTAT(6)<200]: %RED%! Drink a pot ! %WHITE% Hp
 ItemDisplay["Super Healing Potion"]:  %RED%!%WHITE%Hp
-ItemDisplay["Super Mana Potion" AND CHARSTAT(8)<20]: %BLUE%! Low Mana ! %WHITE% Mp
+ItemDisplay["Super Mana Potion" AND CHARSTAT(8)<5]: %BLUE%! Haha you ranna outta mana ! %WHITE% Mp
 ItemDisplay["Super Mana Potion"]: %BLUE%!%WHITE%Mp
 ItemDisplay[hp1 FILTERLVL<4 DIFFICULTY=0]: %RED%!%WHITE%minor hp
 ItemDisplay[hp2 FILTERLVL<4 DIFFICULTY=0]: %RED%!%WHITE%light hp
@@ -205,7 +205,7 @@ ItemDisplay[r09]:  %!runename!%
 //Hide low runes (except ort) in filterlevel 3
 //ItemDisplay[((RUNETIER<18) AND (FILTERLVL=1 OR FILTERLVL=2 OR FILTERLVL=4))]:  %!runename!%
 // added the line below just to use <= (less than or equal to) just because/for science
-ItemDisplay[((RUNETIER<=17) AND (FILTERLVL=1 OR FILTERLVL=2 OR FILTERLVL=4))]:  %!runename!%
+ItemDisplay[((RUNETIER<=17) AND (FILTERLVL=1 OR FILTERLVL=2 OR FILTERLVL=4))]:  %!runename!% %MAPICON(35)%
 ItemDisplay[r18 OR r19 OR r20 OR r21 OR r22]:%NL%%GOLD%%!runename!% %NL%%NL% <<rune>>
 ItemDisplay[r23 OR r24 OR r25]: %NL%%GOLD% 	 %!runename!% 	%NL%%NL% <<rune>>
 ItemDisplay[r26 OR r27 OR r32]: %NL%%GOLD%	   %!runename!% 	 %NL%%NL% <<rune>>

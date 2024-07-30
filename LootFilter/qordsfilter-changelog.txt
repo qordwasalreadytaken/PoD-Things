@@ -3,6 +3,12 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 7-30
+Fixes: 
+Additions: Added some minimap icons for more runes
+Changes:
+
+#####################################
 Update 7-16
 Fixes: 
 Fixed some mising possible corruption mods display
