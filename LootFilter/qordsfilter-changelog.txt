@@ -3,6 +3,24 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 8-12
+Fixes: 
+Additions: 
+Added charm stat details
+Changes: 
+
+#####################################
+Update 8-6
+Fixes: 
+Additions: 
+Added minimap icons for rares
+Changes: 
+Changed filterlevel of some grey socket items
+Removed some redundant lines
+Renamed filter level 4
+Changed default from utility to loosey goosey
+
+#####################################
 Update 7-30
 Fixes: 
 Additions: Added some minimap icons for more runes

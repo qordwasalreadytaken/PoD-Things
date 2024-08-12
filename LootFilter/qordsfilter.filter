@@ -23,8 +23,8 @@
 //
 Attribute[Author]: Qord 
 Attribute[Name]: QordsFilter
-Attribute[Version]: 6.23
-Attribute[Date]: 23 June
+Attribute[Version]: 8.17
+Attribute[Date]: 12 August
 Attribute[FilterLevels]: This is a description of the different filterlevels
 Attribute[AttributeQordsocool]: This is a description of the different filterlevels
 Option[OptionQordsocool]: True
@@ -39,13 +39,13 @@ FilterLevel[2]: Utility
 // Filterlevel 3 hides the above, as well as low runes, large charms, hides some bases (spirit, hoto, cta), hides class specific magic
 FilterLevel[3]: No low runes
 // Filterlevel 4 hides the above, health/mana pots, "probly garbage" labeled items, large charms, hides the "changed in newest patch" lines, more runeword bases
-FilterLevel[4]: No hp/mp pots
+FilterLevel[4]: A little more strict
 // Filterlevel 5 hides the above, as well as lower set and unique items
 FilterLevel[5]: No extra floor junk
 //FilterLevel[6]: Max filterlevel name length
 
 //Set the filter level and notification level of filter on load
-Option[DefaultFilterLevel]: Loosey goosey
+Option[DefaultFilterLevel]: Utility
 Option[DefaultNotifyLevel]: LOW
 
 // Define filter sounds
@@ -90,7 +90,7 @@ TextMacro[shugnite]: %NL% %SAGE%  { Changed in patch Shugnite } // %!shugnite!%
 //Custom display styles
 //inline example: <:pelt: BorderColor = 99, BorderSize = 4, NotificationSound = SoundFile>
 //called with <<rune>> and <<qspecials>> for example
-ItemStyle[rare]: NotificationColor = YELLOW //<<rare>>
+ItemStyle[rare]: MapIcon = 35, MapIconColor = 9, NotificationColor = YELLOW //<<rare>>
 ItemStyle[rune]: MapIcon = 75, MapIconColor = 5, BorderColor = 111, BorderSize = 2, BackgroundColor = 75, NotificationColor = PURPLE, NotificationPriority = HIGH, NotificationSound = corb2, NotificationSoundPriority = HIGH //<<rune>>
 //ItemStyle[qspecials]: MapIcon = 4, MapIconColor = 5, BorderColor = 111, BorderSize = 2, BackgroundColor = 197, NotificationColor = PURPLE, NotificationPriority = MEDIUM, NotificationSound = "@local\sfx\Common\Cain\Cain_hello", NotificationSoundPriority = HIGH
 ItemStyle[qspecials]: MapIcon = 4, MapIconColor = 5, BorderColor = 111, BorderSize = 2, BackgroundColor = 197, NotificationColor = PURPLE, NotificationPriority = HIGH, NotificationSound = "@global\sfx\Common\Cain\Cain_hello", NotificationSoundPriority = HIGH //<<qspecials>>
@@ -133,7 +133,8 @@ ItemDisplay[GOLD>5000 CLVL>79]: %NAME%
 //Pots
 ItemDisplay[rvl]: %PURPLE%R %WHITE%70% //%NOTIFYSOUND(corb3)%
 ItemDisplay[rvs]: %PURPLE%r %WHITE%35%
-ItemDisplay["Super Healing Potion" AND CHARSTAT(6)<200]: %RED%! Drink a pot ! %WHITE% Hp
+//ItemDisplay["Super Healing Potion"]: %RED%%NAME% %MAPICON(4,5)% %BORDER(1,33)% %BGCOLOR(4)% 
+ItemDisplay["Super Healing Potion" AND CLVL>85 AND CHARSTAT(6)<400]: %RED%! Drink a pot ! %WHITE% Hp
 ItemDisplay["Super Healing Potion"]:  %RED%!%WHITE%Hp
 ItemDisplay["Super Mana Potion" AND CHARSTAT(8)<5]: %BLUE%! Haha you ranna outta mana ! %WHITE% Mp
 ItemDisplay["Super Mana Potion"]: %BLUE%!%WHITE%Mp
@@ -222,7 +223,7 @@ ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR SET OR UNI) SOCK>0]: %NAME% %!tans
 //ItemDisplay[GEM AND FILERTLVL=1 AND (DIFFICULTY=0 or CLVL<40)]: %NAME%
 //ItemDisplay[gzv]: %NAME% //Flawless Amethyst
 //ItemDisplay[glw]: %NAME% //Flawless Diamond
-//ItemDisplay[glg]: %NAME% //Flawless Emerald = SoundFile
+//ItemDisplay[glg]: %NAME% //Flawless Emerald 
 ItemDisplay[glr]: %NAME% <:notify: MapIcon = 49>//Flawless Ruby
 //ItemDisplay[glb]: %NAME% //Flawless Sapphire
 //ItemDisplay[gly]: %NAME% //Flawless Topaz
@@ -294,6 +295,42 @@ ItemDisplay[cm1 MAG !ID]:%BLUE%  %NAME%  %GRAY%[%ILVL%]  <:lowprionotify: Border
 ItemDisplay[cm2 MAG !ID FILTERLVL<4]: %BLUE%%NAME%
 ItemDisplay[cm3 MAG !ID]: %BLUE%  %NAME%  %GRAY%[%ILVL%] <:lowprionotify: BorderColor = RGB(128/0/128), BorderSize = 1>
 ItemDisplay[cm3 MAG !ID ILVL>90]: %PURPLE%»»»  »»» %BLUE%  %NAME%  %ORANGE%[%WHITE%%ILVL%%ORANGE%]%PURPLE%  «««  ««« <:lowprionotify: BorderColor = RGB(128/0/128), BorderSize = 2>
+EnableIf[MAG ID (cm3 OR cm2 OR cm1)]
+    ItemDisplay[TABSK8>0]: %NAME% %LIGHT_GRAY%Fire Skiller %CONTINUE%
+    ItemDisplay[TABSK10>0]: %NAME% %LIGHT_GRAY%Cold Skiller %CONTINUE%
+    ItemDisplay[TABSK9>0]: %NAME% %LIGHT_GRAY%Light Skiller %CONTINUE%
+    ItemDisplay[TABSK17>0]: %NAME% %LIGHT_GRAY%PnB Skiller %CONTINUE%
+    ItemDisplay[TABSK18>0]: %NAME% %LIGHT_GRAY%NSummon Skiller %CONTINUE%
+    ItemDisplay[TABSK16>0]: %NAME% %LIGHT_GRAY%Curse Skiller %CONTINUE%
+    ItemDisplay[TABSK24>0]: %NAME% %LIGHT_GRAY%PCombat Skiller %CONTINUE%
+    ItemDisplay[TABSK25>0]: %NAME% %LIGHT_GRAY%Off Aura Skiller %CONTINUE%
+    ItemDisplay[TABSK26>0]: %NAME% %LIGHT_GRAY%Def Aura Skiller %CONTINUE%
+    ItemDisplay[TABSK48>0]: %NAME% %LIGHT_GRAY%Trap Skiller %CONTINUE%
+    ItemDisplay[TABSK50>0]: %NAME% %LIGHT_GRAY%MA Skiller %CONTINUE%
+    ItemDisplay[TABSK42>0]: %NAME% %LIGHT_GRAY%Ele Skiller %CONTINUE%
+    ItemDisplay[TABSK41>0]: %NAME% %LIGHT_GRAY%ShapeShift Skiller %CONTINUE%
+    ItemDisplay[TABSK40>0]: %NAME% %LIGHT_GRAY%DSummon Skiller %CONTINUE%
+    ItemDisplay[TABSK32>0]: %NAME% %LIGHT_GRAY%BCombat Skiller %CONTINUE%
+    ItemDisplay[TABSK33>0]: %NAME% %LIGHT_GRAY%Masteries Skiller %CONTINUE%
+    ItemDisplay[TABSK34>0]: %NAME% %LIGHT_GRAY%WC Skiller %CONTINUE%
+    ItemDisplay[TABSK2>0]: %NAME% %LIGHT_GRAY%Java Skiller %CONTINUE%
+    ItemDisplay[TABSK0>0]: %NAME% %LIGHT_GRAY%Bow Skiller %CONTINUE%
+    ItemDisplay[STAT(0)>0]: %NAME% %LIGHT_GRAY%%STAT(0)%STR %CONTINUE%
+    ItemDisplay[STAT(2)>0]: %NAME% %LIGHT_GRAY%%STAT(2)%DEX %CONTINUE%
+    ItemDisplay[STAT(7)>0]: %NAME% %LIGHT_GRAY%%STAT(7)%Life %CONTINUE%
+    ItemDisplay[STAT(9)>13]: %NAME% %LIGHT_GRAY% %STAT(9)%Mana %CONTINUE%
+    ItemDisplay[RES>0]: %NAME% %LIGHT_GRAY% %RES%AllRes %CONTINUE%
+    ItemDisplay[STAT(19)>0]: %NAME% %LIGHT_GRAY% %STAT(19)%AR %CONTINUE%
+    ItemDisplay[STAT(22)>0]: %NAME% %LIGHT_GRAY% %STAT(22)%MaxDmg %CONTINUE%
+    ItemDisplay[STAT(39)>3]: %NAME% %LIGHT_GRAY% %STAT(39)%FRes %CONTINUE%
+    ItemDisplay[STAT(41)>3]: %NAME% %LIGHT_GRAY% %STAT(41)%LRes %CONTINUE%
+    ItemDisplay[STAT(43)>3]: %NAME% %LIGHT_GRAY% %STAT(43)%CRes %CONTINUE%
+    ItemDisplay[STAT(45)>3]: %NAME% %LIGHT_GRAY% %STAT(45)%PRes %CONTINUE%
+    ItemDisplay[STAT(80)>3]: %NAME% %LIGHT_GRAY% %STAT(80)%MF %CONTINUE%
+    ItemDisplay[STAT(96)>0]: %NAME% %LIGHT_GRAY% %STAT(96)%FRW %CONTINUE%
+    ItemDisplay[STAT(99)>0]: %NAME% %LIGHT_GRAY% %STAT(99)%FHR %CONTINUE%
+    ItemDisplay[MAG ID (cm3 OR cm2 OR cm1)]: %NAME%
+EndIf[]
 ItemDisplay[(cm1 OR cm2 OR cm3) !UNI]: %NAME% %GRAY%[%ILVL%]
 ItemDisplay[(cm1 OR cm2 OR cm3) UNI]: %NAME% <<gguniqs>>
 
@@ -390,9 +427,11 @@ EnableIf[(NMAG OR CRAFT OR (MAG ID) OR (RARE ID)) (CL6 OR WP11)]
 	ItemDisplay[SKILL("Hydra")>2]: %NAME% %LIGHT_GRAY%+3 Hydra%CONTINUE%
 	ItemDisplay[SKILL("Fire Mastery")>2]: %NAME% %LIGHT_GRAY%+3 Fire Mastery%CONTINUE%
 	//Skills I want
-	ItemDisplay[(NMAG OR RARE OR CRAFT) (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws))) (SKILL("Frost Nova")>2 OR SKILL("Shiver Armor")>2 OR SKILL("Blizzard")>2 OR SKILL("Freezing Pulse")>2 OR SKILL("Chilling Armor")>2 OR SKILL("Frozen Orb")>2 OR SKILL("Charged Bolt")>2 OR SKILL("Nova")>2 OR SKILL("Lightning Surge")>2 OR SKILL("Chain Lightning")>2 OR SKILL("Discharge")>2 OR SKILL("Energy Shield")>2 OR SKILL("Inferno")>2 OR SKILL("Immolate")>2 OR SKILL("Fire Wall")>2 OR SKILL("Meteor")>2 OR SKILL("Hydra")>2) OR (SK457>1)]: %NAME% %!tansocks!%
+//	ItemDisplay[(NMAG OR RARE OR CRAFT) (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws))) (SKILL("Frost Nova")>2 OR SKILL("Shiver Armor")>2 OR SKILL("Blizzard")>2 OR SKILL("Freezing Pulse")>2 OR SKILL("Chilling Armor")>2 OR SKILL("Frozen Orb")>2 OR SKILL("Charged Bolt")>2 OR SKILL("Nova")>2 OR SKILL("Lightning Surge")>2 OR SKILL("Chain Lightning")>2 OR SKILL("Discharge")>2 OR SKILL("Energy Shield")>2 OR SKILL("Inferno")>2 OR SKILL("Immolate")>2 OR SKILL("Fire Wall")>2 OR SKILL("Meteor")>2 OR SKILL("Hydra")>2) OR (SK457>1)]: %NAME% %!tansocks!%
+	ItemDisplay[(NMAG OR RARE OR CRAFT) (((SOCK=0 OR SOCK=3) (ob5 OR oba OR obf)) OR ((SOCK=0 OR SOCK>3) (WP11))) (SKILL("Frost Nova")>2 OR SKILL("Shiver Armor")>2 OR SKILL("Blizzard")>2 OR SKILL("Freezing Pulse")>2 OR SKILL("Chilling Armor")>2 OR SKILL("Frozen Orb")>2 OR SKILL("Charged Bolt")>2 OR SKILL("Nova")>2 OR SKILL("Lightning Surge")>2 OR SKILL("Chain Lightning")>2 OR SKILL("Discharge")>2 OR SKILL("Energy Shield")>2 OR SKILL("Inferno")>2 OR SKILL("Immolate")>2 OR SKILL("Fire Wall")>2 OR SKILL("Meteor")>2 OR SKILL("Hydra")>2) OR (SK457>1)]: %NAME% %!tansocks!%
+	ItemDisplay[FILTERLVL<4 (NMAG OR RARE OR CRAFT) (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws))) (SKILL("Frost Nova")>2 OR SKILL("Shiver Armor")>2 OR SKILL("Blizzard")>2 OR SKILL("Freezing Pulse")>2 OR SKILL("Chilling Armor")>2 OR SKILL("Frozen Orb")>2 OR SKILL("Charged Bolt")>2 OR SKILL("Nova")>2 OR SKILL("Lightning Surge")>2 OR SKILL("Chain Lightning")>2 OR SKILL("Discharge")>2 OR SKILL("Energy Shield")>2 OR SKILL("Inferno")>2 OR SKILL("Immolate")>2 OR SKILL("Fire Wall")>2 OR SKILL("Meteor")>2 OR SKILL("Hydra")>2) OR (SK457>1)]: %NAME% %!graysocks!%
 	//Misc skills
-	ItemDisplay[(NMAG OR RARE OR CRAFT) (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws))) (SKILL("Ice Bolt")>2 OR SKILL("Frigerate")>2 OR SKILL("Ice Blast")>2 OR SKILL("Glacial Spike")>2 OR SKILL("Cold Mastery")>2 OR SKILL("Static Field")>2 OR SKILL("Telekinesis")>2 OR SKILL("Teleport")>2 OR SKILL("Lightning Mastery")>2 OR SKILL("Fire Bolt")>2 OR SKILL("Warmth")>2 OR SKILL("Fire Ball")>2 OR SKILL("Enflame")>2 OR SKILL("Fire Mastery")>2)]: %NAME% //+3 misc 
+	ItemDisplay[FILTERLVL=1 (NMAG OR RARE OR CRAFT) (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws))) (SKILL("Ice Bolt")>2 OR SKILL("Frigerate")>2 OR SKILL("Ice Blast")>2 OR SKILL("Glacial Spike")>2 OR SKILL("Cold Mastery")>2 OR SKILL("Static Field")>2 OR SKILL("Telekinesis")>2 OR SKILL("Teleport")>2 OR SKILL("Lightning Mastery")>2 OR SKILL("Fire Bolt")>2 OR SKILL("Warmth")>2 OR SKILL("Fire Ball")>2 OR SKILL("Enflame")>2 OR SKILL("Fire Mastery")>2)]: %NAME% //+3 misc 
 	//Shopping
 	//Skills I want
 	ItemDisplay[MAG (CLSK1>0 OR TABSK8>0 OR TABSK9>0 OR TABSK10>0 OR SKILL("Frost Nova")>2 OR SKILL("Shiver Armor")>2 OR SKILL("Blizzard")>2 OR SKILL("Freezing Pulse")>2 OR SKILL("Chilling Armor")>2 OR SKILL("Frozen Orb")>2 OR SKILL("Charged Bolt")>2 OR SKILL("Nova")>2 OR SKILL("Lightning Surge")>2 OR SKILL("Chain Lightning")>2 OR SKILL("Discharge")>2 OR SKILL("Energy Shield")>2 OR SKILL("Inferno")>2 OR SKILL("Immolate")>2 OR SKILL("Fire Wall")>2 OR SKILL("Meteor")>2 OR SKILL("Hydra")>2)]: %NAME% <:notify: NotificationPriority = LOW, NotificationColor = ITEM>
@@ -400,54 +439,6 @@ EnableIf[(NMAG OR CRAFT OR (MAG ID) OR (RARE ID)) (CL6 OR WP11)]
 	ItemDisplay[MAG (SKILL("Ice Bolt")>2 OR SKILL("Frigerate")>2 OR SKILL("Ice Blast")>2 OR SKILL("Glacial Spike")>2 OR SKILL("Cold Mastery")>2 OR SKILL("Static Field")>2 OR SKILL("Telekinesis")>2 OR SKILL("Teleport")>2 OR SKILL("Lightning Mastery")>2 OR SKILL("Fire Bolt")>2 OR SKILL("Warmth")>2 OR SKILL("Fire Ball")>2 OR SKILL("Enflame")>2 OR SKILL("Fire Mastery")>2)]: %NAME% <:notify: NotificationPriority = LOW, NotificationColor = ITEM>
 EndIf[]
 
-// Other orbs
-//////////////////////////////////////////////////////////////////////
-// Test lines with skill names instead of skill numbers
-// Non-test lines with skill numbers follows
-// If skill names are gray, these lines work
-// If skill names are red, these lines did not work
-// Sorc bases, not memory, by skill name
-//ItemDisplay[NMAG SKILL("Ice Bolt")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Ice Bolt%CONTINUE%
-//ItemDisplay[NMAG SKILL("Frigerate")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Frigerate%CONTINUE%
-ItemDisplay[NMAG SKILL("Frost Nova")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Frost Nova%CONTINUE%
-//ItemDisplay[NMAG SKILL("Ice Blast")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Ice Blast%CONTINUE%
-ItemDisplay[NMAG SKILL("Shiver Armor")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Shiver Armor%CONTINUE%
-//ItemDisplay[NMAG SKILL("Glacial Spike")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Glacial Spike%CONTINUE%
-ItemDisplay[NMAG SKILL("Blizzard")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Blizzard%CONTINUE%
-ItemDisplay[NMAG SKILL("Freezing Pulse")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Freezing Pulse%CONTINUE%
-ItemDisplay[NMAG SKILL("Chilling Armor")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Chilling Armor%CONTINUE%
-ItemDisplay[NMAG SKILL("Frozen Orb")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Frozen Orb%CONTINUE%
-//ItemDisplay[NMAG SKILL("Cold Mastery")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Cold Mastery%CONTINUE%
-ItemDisplay[NMAG SKILL("Charged Bolt")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Charged Bolt%CONTINUE%
-//ItemDisplay[NMAG SKILL("Static Field")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Static Field%CONTINUE%
-//ItemDisplay[NMAG SKILL("Telekinesis")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Telekinesis%CONTINUE%
-ItemDisplay[NMAG SKILL("Nova")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Nova%CONTINUE%
-ItemDisplay[NMAG SKILL("Lightning Surge")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Lightning Surge%CONTINUE%
-ItemDisplay[NMAG SKILL("Chain Lightning")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Chain Lightning%CONTINUE%
-//ItemDisplay[NMAG SKILL("Teleport")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Teleport%CONTINUE%
-ItemDisplay[NMAG SKILL("Discharge")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Discharge%CONTINUE%
-//ItemDisplay[NMAG SKILL("Thunder storm")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Thunder Storm%CONTINUE%
-ItemDisplay[NMAG SKILL("Energy Shield")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Energy Shield%CONTINUE%
-//ItemDisplay[NMAG SKILL("Lightning Mastery")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Lightning Mastery%CONTINUE%
-//ItemDisplay[NMAG SKILL("Fire Bolt")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Fire Bolt%CONTINUE%
-//ItemDisplay[NMAG SKILL("Warmth")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Warmth%CONTINUE%
-ItemDisplay[NMAG SKILL("Inferno")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Inferno%CONTINUE%
-ItemDisplay[NMAG SKILL("Immolate")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Immolate%CONTINUE%
-//ItemDisplay[NMAG SKILL("Fire Ball")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Fire Ball%CONTINUE%
-ItemDisplay[NMAG SKILL("Fire Wall")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Fire Wall%CONTINUE%
-//ItemDisplay[NMAG SKILL("Enflame")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Enflame%CONTINUE%
-ItemDisplay[NMAG SKILL("Meteor")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Meteor%CONTINUE%
-ItemDisplay[NMAG SKILL("Hydra")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Hydra%CONTINUE%
-//ItemDisplay[NMAG SKILL("Fire Mastery")>2 (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws)))]: %NAME% %LIGHT_GRAY%+3 Fire Mastery%CONTINUE%
-//ItemDisplay[NMAG (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws))) (SKILL("Frigerate") >2 OR SKILL("Frost Nova") >2 OR SKILL("Ice Blast") >2 OR SKILL("Shiver Armor") >2 OR SKILL("Glacial Spike") >2 OR SKILL("Blizzard") >2 OR SKILL("Freezing Pulse") >2 OR SKILL("Chilling Arm OR ") >2 OR SKILL("Frozen Orb") >2 OR SKILL("Cold Mastery") >2 OR SKILL("Charged Bolt") >2 OR SKILL("Static Field") >2 OR SKILL("Telekinesis") >2 OR SKILL("Nova") >2 OR SKILL("Lightning Surge") >2 OR SKILL("Chain Lightning") >2 OR SKILL("Teleport") >2 OR SKILL("Discharge") >2 OR SKILL("Thunder Storm") >2 OR SKILL("Energy Shield") >2 OR SKILL("Lightning Mastery") >2 OR SKILL("Fire Bolt") >2 OR SKILL("Warmth") >2 OR SKILL("Blaze") >2 OR SKILL("Immolate") >2 OR SKILL("Fire Ball") >2 OR SKILL("Fire Wall") >2 OR SKILL("Enflame") >2 OR SKILL("Meteor") >2 OR SKILL("Hydra") >2 OR SKILL("Fire Mastery") >2
-)]: %NAME% %GRAY%[%SOCKETS%]
-// Ok now show me all that on the 
-// Thunderstorm doesn't seem to work, remove this from the above: OR SKILL("Thunder Storm")>2 
-//Skills I want
-ItemDisplay[NMAG (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws))) (SKILL("Frost Nova")>2 OR SKILL("Shiver Armor")>2 OR SKILL("Blizzard")>2 OR SKILL("Freezing Pulse")>2 OR SKILL("Chilling Armor")>2 OR SKILL("Frozen Orb")>2 OR SKILL("Charged Bolt")>2 OR SKILL("Nova")>2 OR SKILL("Lightning Surge")>2 OR SKILL("Chain Lightning")>2 OR SKILL("Discharge")>2 OR SKILL("Energy Shield")>2 OR SKILL("Inferno")>2 OR SKILL("Immolate")>2 OR SKILL("Fire Wall")>2 OR SKILL("Meteor")>2 OR SKILL("Hydra")>2)]: %NAME% %!tansocks!%
-
-//Misc skills
-ItemDisplay[NMAG (((SOCK=0 OR SOCK=3) CL6) OR ((SOCK=0 OR SOCK>3) (wst OR 8ws OR 6ws))) (SKILL("Ice Bolt")>2 OR SKILL("Frigerate")>2 OR SKILL("Ice Blast")>2 OR SKILL("Glacial Spike")>2 OR SKILL("Cold Mastery")>2 OR SKILL("Static Field")>2 OR SKILL("Telekinesis")>2 OR SKILL("Teleport")>2 OR SKILL("Lightning Mastery")>2 OR SKILL("Fire Bolt")>2 OR SKILL("Warmth")>2 OR SKILL("Fire Ball")>2 OR SKILL("Enflame")>2 OR SKILL("Fire Mastery")>2)]: %NAME% +3 misc //%CONTINUE%
 
 //////////////////////////////////////////////////////////////////////
 // Test lines with skill names instead of skill numbers
@@ -567,7 +558,7 @@ EnableIf[(NMAG OR (MAG ID)) (WP2 OR WP13) (SOCK=0 OR SOCK>2)]
 EndIf[]
 
 // Necro
-EnableIf[(MAG OR NMAG) (CL4 OR WP12)]
+EnableIf[(MAG OR RARE OR NMAG) (CL4 OR WP12)]
       ItemDisplay[TABSK16>2 SK477>2]: %NAME% %RED% +6 Hemo %!graysocks!%<:notify: BorderColor = RGB(245/2/19), BorderSize = 4, BackgroundColor = RGB(245/2/19), NotificationPriority = HIGH, NotificationColor = ITEM>
       ItemDisplay[(((TABSK16>1 OR CLSK2>1) SK477>2) OR (TABSK16>2 SK477>1)) SOCK=0]: %NAME% %RED% +5 Hemo %!graysocks!%<:notify: BorderColor = RGB(245/2/19), BorderSize = 4, BackgroundColor = RGB(245/2/19), NotificationPriority = HIGH, NotificationColor = ITEM>
       ItemDisplay[CLSK2>0]: %NAME% %LIGHT_GRAY%+Necro Skills%CONTINUE%
@@ -670,39 +661,9 @@ EnableIf[CL5 ((NMAG (SOCK=0 OR SOCK>2)) OR (MAG ID))]
 	ItemDisplay[NMAG CL5 !INF !NORM SKILL("Dragon Claw")>2 OR SKILL("Tiger Strike")>2 OR SKILL("Dragon Talon")>2 OR SKILL("Fists of Fire")>2 OR SKILL("Cobra Strike")>2 OR SKILL("Claws of Thunder")>2 OR SKILL("Dragon Flight")>2 OR SKILL("Blades of Ice")>2 OR SKILL("Claw Mastery")>2 OR SKILL("Psychic Hammer")>2 OR SKILL("Burst of Speed")>2 OR SKILL("Weapon Block")>2 CL5 OR SKILL("Cloak of Shadows")>2 OR SKILL("Fade")>2 OR SKILL("Shadow Warrior")>2 OR SKILL("Mind Blast")>2 OR SKILL("Venom")>2 OR SKILL("Shadow Master")>2 OR SKILL("Fire Blast")>2 OR SKILL("Shock Web")>2 OR SKILL("Blade Throw")>2 OR SKILL("Charged Bolt Sentry")>2 OR SKILL("Wake of Fire")>2 OR SKILL("Blade Fury")>2 OR SKILL("Lightning Sentry")>2 OR SKILL("Wake of Inferno")>2 OR SKILL("Death Sentry")>2 OR SKILL("Blade Shield")>2]: %NAME% %!tansocks!%
 	ItemDisplay[NMAG CL5 SKILL("Dragon Claw")>2 OR SKILL("Tiger Strike")>2 OR SKILL("Dragon Talon")>2 OR SKILL("Fists of Fire")>2 OR SKILL("Cobra Strike")>2 OR SKILL("Claws of Thunder")>2 OR SKILL("Dragon Flight")>2 OR SKILL("Blades of Ice")>2 OR SKILL("Claw Mastery")>2 OR SKILL("Psychic Hammer")>2 OR SKILL("Burst of Speed")>2 OR SKILL("Weapon Block")>2 CL5 OR SKILL("Cloak of Shadows")>2 OR SKILL("Fade")>2 OR SKILL("Shadow Warrior")>2 OR SKILL("Mind Blast")>2 OR SKILL("Venom")>2 OR SKILL("Shadow Master")>2 OR SKILL("Fire Blast")>2 OR SKILL("Shock Web")>2 OR SKILL("Blade Throw")>2 OR SKILL("Charged Bolt Sentry")>2 OR SKILL("Wake of Fire")>2 OR SKILL("Blade Fury")>2 OR SKILL("Lightning Sentry")>2 OR SKILL("Wake of Inferno")>2 OR SKILL("Death Sentry")>2 OR SKILL("Blade Shield")>2]: %NAME% %!graysocks!%
    	ItemDisplay[NMAG CL5 FILTERLVL<3 SKILL("Dragon Claw")>1 OR SKILL("Tiger Strike")>1 OR SKILL("Dragon Talon")>1 OR SKILL("Fists of Fire")>1 OR SKILL("Cobra Strike")>1 OR SKILL("Claws of Thunder")>1 OR SKILL("Dragon Flight")>1 OR SKILL("Blades of Ice")>1 OR SKILL("Claw Mastery")>1 OR SKILL("Psychic Hammer")>1 OR SKILL("Burst of Speed")>1 OR SKILL("Weapon Block")>1 CL5 OR SKILL("Cloak of Shadows")>1 OR SKILL("Fade")>1 OR SKILL("Shadow Warrior")>1 OR SKILL("Mind Blast")>1 OR SKILL("Venom")>1 OR SKILL("Shadow Master")>1 OR SKILL("Fire Blast")>1 OR SKILL("Shock Web")>1 OR SKILL("Blade Throw")>1 OR SKILL("Charged Bolt Sentry")>1 OR SKILL("Wake of Fire")>1 OR SKILL("Blade Fury")>1 OR SKILL("Lightning Sentry")>1 OR SKILL("Wake of Inferno")>1 OR SKILL("Death Sentry")>1 OR SKILL("Blade Shield")>1]: %NAME% %!graysocks!%
+      ItemDisplay[FILTERLVL < 4 CL5 !INF !NORM NMAG (SK261>2 OR SK262>2 OR SK263>2 OR SK264>2 OR SK265>2 OR SK266>2 OR SK267>2 OR SK268>2 OR SK269>2 OR SK270>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK274>2 OR SK275>2 OR SK276>2 OR SK277>2 OR SK278>2 OR SK279>2 OR SK280>2) (SOCK=0 OR SOCK=3)]: %GRAY%[%WHITE%+3 Misc%GRAY%] %NAME% %!graysocks!%
 EndIf[]
-
-
-//Assassin
-//Specials, MA skills
-ItemDisplay[CL5  NMAG !INF !NORM (SOCK=0 OR SOCK=3) SK254>2]:  %NAME% %LIGHT_GRAY%[%WHITE% +3 Fix the filter 254%] %CONTINUE%
-ItemDisplay[CL5  NMAG !INF !NORM (SOCK=0 OR SOCK=3) SK255>2]:  %NAME% %LIGHT_GRAY%[%WHITE% +3 Fix the filter 255%] %CONTINUE% 
-ItemDisplay[CL5  NMAG !INF !ETH !NORM (SOCK=0 OR SOCK=3) SK259>2]:  %NAME% %LIGHT_GRAY% +3 Fist of Fire %CONTINUE%
-ItemDisplay[CL5  NMAG !INF !ETH !NORM (SOCK=0 OR SOCK=3) SK260>2]:  %NAME% %LIGHT_GRAY% +3 Dragon Claw %CONTINUE%
-ItemDisplay[CL5  NMAG !INF !NORM (SOCK=0 OR SOCK=3) SK265>2]:  %NAME% %LIGHT_GRAY%[%WHITE% +3 Fix the filter 265%] %CONTINUE% 
-ItemDisplay[CL5  NMAG !INF !ETH !NORM (SOCK=0 OR SOCK=3) SK269>2]:  %NAME% %LIGHT_GRAY% +3 Claws of Thunder %CONTINUE%
-ItemDisplay[CL5  NMAG !INF !ETH !NORM (SOCK=0 OR SOCK=3) SK270>2]:  %NAME% %LIGHT_GRAY% +3 Dragon Tail WTF LOL%CONTINUE%
-ItemDisplay[CL5  NMAG !INF !NORM (SOCK=0 OR SOCK=3) SK274>2]:  %NAME% %LIGHT_GRAY% +3 Blades of Ice %CONTINUE% 
-ItemDisplay[CL5  NMAG !INF !NORM (SOCK=0 OR SOCK=3) SK275>2]:  %NAME% %LIGHT_GRAY%[%WHITE% +3 Fix the filter 275%] %CONTINUE% 
-ItemDisplay[CL5  NMAG !INF !NORM (SOCK=0 OR SOCK=3) SK280>2]:  %NAME% %LIGHT_GRAY%[%WHITE% +3 Fix the filter 280%] %!tansocks!%
-ItemDisplay[CL5  NMAG !INF !NORM (SOCK=0 OR SOCK=3) SK254>2 OR SK280>2 OR SK255>2 OR SK259>2 OR SK260>2 OR SK265>2 OR SK269>2 OR SK270>2 OR SK274>2 OR SK255>2]:  %NAME% %!tansocks!%
-//More Plague claw
-ItemDisplay[CL5 !INF NMAG (SK262>2 AND SK272>0) (SOCK=0 OR SOCK=3)]: %NAME% %PURPLE%+3 Wake of Fire w/ Wake of Inferno %!tansocks!%
-ItemDisplay[CL5 !INF NMAG (SK277>2 AND SK278>0) (SOCK=0 OR SOCK=3)]: %NAME% %PURPLE%+3 Blade Shield +X Venom %!tansocks!%
-ItemDisplay[CL5 !INF NMAG (SK278>2 AND SK267>0) (SOCK=0 OR SOCK=3)]: %NAME% %PURPLE%+3 Venom +X Fade %!tansocks!%
-ItemDisplay[CL5 !INF NMAG (SK261>2 OR SK262>2 OR SK263>2 OR SK264>2 OR SK265>2 OR SK266>2 OR SK267>2 OR SK268>2 OR SK269>2 OR SK270>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK274>2 OR SK275>2 OR SK276>2 OR SK278>2 OR SK279>2 OR SK280>2) SK277>2 (SOCK=0 OR SOCK=3)]: %NAME% %WHITE%+3 Blade Shield Plus++ %!tansocks!%
-ItemDisplay[CL5 !INF NMAG SK277>2 (SOCK=0 OR SOCK=3)]: %NAME% %LIGHT_GRAY%+3 Blade Shield %CONTINUE%
-ItemDisplay[CL5 !INF NMAG SK278>2 (SOCK=0 OR SOCK=3)]: %NAME% %LIGHT_GRAY%+3 Venom %CONTINUE%
-ItemDisplay[CL5 !INF NMAG SK262>2 (SOCK=0 OR SOCK=3)]: %NAME% %LIGHT_GRAY%+3 Wake of Fire %CONTINUE%
-ItemDisplay[CL5 !INF NMAG SK272>2 (SOCK=0 OR SOCK=3)]: %NAME% %LIGHT_GRAY%+3 Wake of Inferno %CONTINUE%
-ItemDisplay[CL5 !INF NMAG SK271>2 (SOCK=0 OR SOCK=3)]: %NAME% %LIGHT_GRAY%+3 Light Sentry %CONTINUE%
-ItemDisplay[CL5 !INF !NORM NMAG SK266>2 (SOCK=0 OR SOCK=3)]: %LIGHT_GRAY%+3 Blade Fury %CONTINUE%
-ItemDisplay[CL5 !INF NMAG SK276>2 (SOCK=0 OR SOCK=3)]: %NAME% %LIGHT_GRAY%+3 Death Sentry %CONTINUE%
-ItemDisplay[CL5 !INF NMAG SK273>2 (SOCK=0 OR SOCK=3)]: %NAME% %LIGHT_GRAY%+3 Mind Blast %CONTINUE%
-ItemDisplay[CL5 !INF NMAG SK267>2 (SOCK=0 OR SOCK=3)]: %NAME% %LIGHT_GRAY%+3 Fade %CONTINUE%
-ItemDisplay[CL5 !INF NMAG (SOCK=0 OR SOCK=3) SK277>2 OR SK278>2 OR SK262>2 OR SK272>2 OR SK271>2 OR SK266>2 OR SK276>2 OR SK273>2 OR SK267>2]: %NAME% Claw %!tansocks!%
 // Any nonmagical 3 skill claw with 0 or 3 sockets catch all
-ItemDisplay[CL5 !INF !NORM NMAG (SK261>2 OR SK262>2 OR SK263>2 OR SK264>2 OR SK265>2 OR SK266>2 OR SK267>2 OR SK268>2 OR SK269>2 OR SK270>2 OR SK271>2 OR SK272>2 OR SK273>2 OR SK274>2 OR SK275>2 OR SK276>2 OR SK277>2 OR SK278>2 OR SK279>2 OR SK280>2) (SOCK=0 OR SOCK=3)]: %GRAY%[%WHITE%+3 Misc%GRAY%] %NAME% %!tansocks!%
 
 
 //Other RuneWord Bases
@@ -751,24 +712,18 @@ ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) (ETH AND !INF) AND (NMAG OR RW) (SOCK=0 O
 ItemDisplay[(7wa OR 7gd OR 7p7 OR 7h7) AND (NMAG OR RW) (SOCK=0 OR SOCK=6)]: %GRAY%%NAME% %!tansocks!%
 //Lawbringer
 ItemDisplay[72h (ETH AND !INF) AND (NMAG OR RW) (SOCK=0 OR SOCK=3)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
-//Chaos
-//ItemDisplay[9tw AND (!ETH AND !INF) AND (NMAG OR RW) AND (SK274>0 AND SK275>0) AND (SOCK=0 OR SOCK=3)]: %GRAY%[%WHITE%chaos%GRAY%] %NAME% %!tansocks!%
-ItemDisplay[(7tw OR 7qr OR 7ar) (!ETH AND !INF) (NMAG OR RW) (SOCK=0 OR SOCK=3) SK263>1 (SK279>0 OR SK273>0 OR SK275>0)]: %GRAY%[%WHITE%chaos%GRAY%] %NAME% %!tansocks!%
-// MA 
-ItemDisplay[(7tw OR 7qr OR 7ar) (!ETH AND !INF) (NMAG OR RW) (SOCK=0 OR SOCK=3) SK274=3 (SK265>1 OR SK259>1 OR SK280>1 OR SK254>1)]: %GRAY%[%WHITE%ma%GRAY%] %NAME% %!tansocks!%  //redundant
-ItemDisplay[(clw OR btl OR skr OR 9ar OR 9lw OR 9tw OR 9qr OR 7ar OR 7wb OR 7lw OR 7tw OR 7qr) !INF (NMAG OR RW) SK274>2 (SOCK=0 OR SOCK=3)]: %GRAY%[%WHITE%3boi%GRAY%] %NAME% %!tansocks!%  //redundant?
 
 //Armors
 ItemDisplay[xtp !ETH AND (NMAG OR RW) SOCK=2]: %NAME% %!tansocks!%
 ItemDisplay[(xtp OR utp OR uui) (!INF AND !ETH) AND (NMAG OR RW) (SOCK=0 OR SOCK>2)]: %GRAY%%NAME% %!tansocks!%
-ItemDisplay[EQ2 ELT ETH NMAG (SOCK=0 OR SOCK>2)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
-ItemDisplay[EQ2 EXC ETH NMAG (SOCK=0 OR SOCK>2)]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!tansocks!%
+ItemDisplay[EQ2 ELT ETH NMAG (SOCK=0 OR SOCK>2) FILTERLVL<4]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!graysocks!%
+ItemDisplay[EQ2 EXC ETH NMAG (SOCK=0 OR SOCK>2) FILTERLVL<3]: %GRAY%[%WHITE%eth%GRAY%] %NAME% %!graysocks!%
 ItemDisplay[EQ2 ELT NMAG (SOCK=0 OR SOCK>2) FILTERLVL<4]: %GRAY% %NAME% %!graysocks!%
 ItemDisplay[EQ2 EXC NMAG (SOCK=0 OR SOCK>2) FILTERLVL<3]: %GRAY% %NAME% %!graysocks!%
 
 //Helmets
 ItemDisplay[(ci3 OR uh9) (!INF AND !ETH) AND (NMAG OR RW) SOCK=3]: %NAME% %!tansocks!%
-ItemDisplay[uap (NMAG OR RW) (SOCK=0 OR SOCK>2) FILTERLVL<4]: %NAME% %!tansocks!%
+ItemDisplay[uap (NMAG OR RW) (SOCK=0 OR SOCK>2) FILTERLVL<4]: %NAME% %!graysocks!%
 
 //Shields
 ItemDisplay[(pab OR pac) (!INF AND ETH) AND (NMAG OR RW) (SOCK=0 OR SOCK=4) RES>34]: %GRAY%[%WHITE%Eth%GRAY%][%WHITE%Resists%GRAY%] %NAME% %!tansocks!%
@@ -790,7 +745,7 @@ ItemDisplay[NMAG WP1 (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!%
 ItemDisplay[(WP16 OR WP15) (ELT OR EXC) NMAG (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!% //are wp15, wp16, and wp17 working yet??
 //ItemDisplay[WP3 ELT NMAG (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!%
 
-//Shopping list
+//Shopping list for vendor notifications that aren't listed above
 //ItemDisplay[(WP15 OR WP17) TABSK34>2]: %!shopping!% %GREEN%3bo Stick %!shopping!% <<notify>>
 ItemDisplay[WP15 TABSK34>2]: %!shopping!% %GREEN%3bo Stick %!shopping!% <<notify>>
 ItemDisplay[WEAPON TABSK34>2]: %!shopping!% %GREEN%2-Hand 3bo Stick %!shopping!% <<notify>>
@@ -869,7 +824,7 @@ ItemDisplay[rin (RARE OR SET OR UNI OR CRAFT) ID]:%NAME%{%GRAY% FCR 10% | Faster
 //ItemDisplay[(aq2 OR cq2) (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% All Res 5% | LGOH 4-6 | MGOH 2-4 | IAS 10% | Vita 5-15% %NL% %!pcm!%}
 ItemDisplay[(aq2 OR cq2) (RARE OR SET OR UNI) ID]:%NAME%{%GRAY% All Res 5% | LGOH 4-6 | MGOH 2-4 | IAS 10% | +1 to All Skills %NL% %!pcm!%}
 
-// catch all
+// catch all, show almost all that is identified
 ItemDisplay[(ARMOR OR WEAPON) (MAG OR RARE OR SET OR UNI OR CRAFT) ID]: %NAME% //%CONTINUE%//[%CODE%]
 ItemDisplay[(UNI OR SET OR CRAFT) ID]: %NAME% //%CONTINUE%//[%CODE%]
 
