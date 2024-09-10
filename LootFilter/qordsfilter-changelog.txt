@@ -3,6 +3,13 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 9-9
+Fixes: 
+Additions: 
+Added Orb of Alteration
+Changes: 
+
+#####################################
 Update 8-12
 Fixes: 
 Additions: 
