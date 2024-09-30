@@ -3,6 +3,19 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 9-29
+Fixes: 
+Thunderstorm display on orbs
+Additions: 
+Added magic war cry weapons
+Changes: 
+Removed "no boss" from maps display
+Rare jewels show map icon
+Extra visibility for some low level arrows/bolts
+Removed some wand notifications
+Hide some claws at filterlevel 5
+
+#####################################
 Update 9-9
 Fixes: 
 Additions: 
