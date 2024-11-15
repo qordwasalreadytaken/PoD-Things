@@ -3,6 +3,13 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 11-15
+Fixes: 
+Additions: 
+Changes: 
+Changed skill names to reflect P22 changes, remove old skills
+
+#####################################
 Update 9-29
 Fixes: 
 Thunderstorm display on orbs
