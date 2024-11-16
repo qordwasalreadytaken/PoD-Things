@@ -45,7 +45,7 @@ FilterLevel[5]: No extra floor junk
 //FilterLevel[6]: Max filterlevel name length
 
 //Set the filter level and notification level of filter on load
-Option[DefaultFilterLevel]: Loosey goosey
+Option[DefaultFilterLevel]: Utility
 Option[DefaultNotifyLevel]: LOW
 
 // Define filter sounds
@@ -272,6 +272,9 @@ ItemDisplay[CRAFT]: %NAME% %CONTINUE%
 // Magic Rings and amulets
 ItemDisplay[(rin OR amu) MAG ILVL>90]: %NAME% %WHITE%[%ILVL%] %CONTINUE%
 ItemDisplay[(rin OR amu) MAG FILTERLVL=1]: %NAME% %GRAY%[%ILVL%] %CONTINUE%
+// Magic arrows and bolts
+ItemDisplay[(aq2 OR cq2) MAG ILVL>90]: %NAME% %WHITE%[%ILVL%] %CONTINUE%
+ItemDisplay[(aq2 OR cq2) MAG FILTERLVL<3]: %NAME% %GRAY%[%ILVL%] %CONTINUE%
 
 //Rares
 //Rare military picks
@@ -520,12 +523,13 @@ EnableIf[NMAG CL2]
         ItemDisplay[NMAG SKILL("Cleave")>2 CL2 !SOCK=1]: %NAME% %LIGHT_GRAY%+3 Cleave%CONTINUE%
         ItemDisplay[NMAG SKILL("Frenzy")>2 CL2 !SOCK=1]: %NAME% %LIGHT_GRAY%+3 Frenzy%CONTINUE%
         ItemDisplay[NMAG SKILL("Stun")>2 CL2 !SOCK=1]: %NAME% %LIGHT_GRAY%+3 Stun%CONTINUE%
-        ItemDisplay[NMAG SKILL("Leap Slam")>2 CL2 !SOCK=1]: %NAME% %LIGHT_GRAY%+3 Leap%CONTINUE%
-        ItemDisplay[NMAG SKILL("Double Throw")>2 CL2 !SOCK=1]: %NAME% %LIGHT_GRAY%+3 Power Throw%CONTINUE%
+//        ItemDisplay[NMAG SKILL("Leap")>2 CL2 !SOCK=1]: %NAME% %LIGHT_GRAY%+3 Leap%CONTINUE%
+//        ItemDisplay[NMAG SKILL("Power Throw")>2 CL2 !SOCK=1]: %NAME% %LIGHT_GRAY%+3 Power Throw%CONTINUE%
         ItemDisplay[NMAG SKILL("Bash")>2 CL2 !SOCK=1]: %NAME% %LIGHT_GRAY%+3 Bash%CONTINUE%
         ItemDisplay[NMAG SKILL("Ethereal Throw")>2 CL2 !SOCK=1]: %NAME% %LIGHT_GRAY%+3 Ethereal Throw%CONTINUE%
         ItemDisplay[NMAG SKILL("Whirlwind")>2 CL2 !SOCK=1]: %NAME% %LIGHT_GRAY%+3 Whirlwind%CONTINUE%
-        ItemDisplay[(CL2 NMAG) SKILL("Howl")>2 OR SKILL("Find Potion")>2 OR SKILL("Taunt")>2 OR SKILL("Shout")>2 OR SKILL("Find Item")>2 OR SKILL("Battle Cry")>2 OR SKILL("Battle Orders")>2 OR SKILL("Grim Ward")>2 OR SKILL("War Cry")>2 OR SKILL("Battle Command")>2 OR SKILL("Edged Weapon Mastery")>2 OR SKILL("Pole Weapon Mastery")>2 OR SKILL("Blunt Weapon Mastery")>2 OR SKILL("Thrown Weapon Mastery")>2 OR SKILL("Increased Stamina")>2 OR SKILL("Counter Attack")>2 OR SKILL("Iron Skin")>2 OR SKILL("Increased Speed")>2 OR SKILL("Puncture")>2 OR SKILL("Natural Resistance")>2 OR SKILL("Whirling Axes")>2 OR SKILL("Double Swing")>2 OR SKILL("Concentrate")>2 OR SKILL("Cleave")>2 OR SKILL("Frenzy")>2 OR SKILL("Stun")>2 OR SKILL("Leap Slam")>2 OR SKILL("Double Throw")>2 OR SKILL("Bash")>2 OR SKILL("Ethereal Throw")>2 OR SKILL("Whirlwind")>2]:  %NAME%
+//        ItemDisplay[(CL2 NMAG) SKILL("Howl")>2 OR SKILL("Find Potion")>2 OR SKILL("Taunt")>2 OR SKILL("Shout")>2 OR SKILL("Find Item")>2 OR SKILL("Battle Cry")>2 OR SKILL("Battle Orders")>2 OR SKILL("Grim Ward")>2 OR SKILL("War Cry")>2 OR SKILL("Battle Command")>2 OR SKILL("Edged Weapon Mastery")>2 OR SKILL("Pole Weapon Mastery")>2 OR SKILL("Blunt Weapon Mastery")>2 OR SKILL("Thrown Weapon Mastery")>2 OR SKILL("Increased Stamina")>2 OR SKILL("Counter Attack")>2 OR SKILL("Iron Skin")>2 OR SKILL("Increased Speed")>2 OR SKILL("Puncture")>2 OR SKILL("Natural Resistance")>2 OR SKILL("Whirling Axes")>2 OR SKILL("Double Swing")>2 OR SKILL("Concentrate")>2 OR SKILL("Cleave")>2 OR SKILL("Frenzy")>2 OR SKILL("Stun")>2 OR SKILL("Leap")>2 OR SKILL("Power Throw")>2 OR SKILL("Bash")>2 OR SKILL("Ethereal Throw")>2 OR SKILL("Whirlwind")>2]:  %NAME%
+SKILL("Battle Orders")>2 OR SKILL("Grim Ward")>2 OR SKILL("War Cry")>2 OR SKILL("Battle Command")>2 OR SKILL("Edged Weapon Mastery")>2 OR SKILL("Pole Weapon Mastery")>2 OR SKILL("Blunt Weapon Mastery")>2 OR SKILL("Thrown Weapon Mastery")>2 OR SKILL("Increased Stamina")>2 OR SKILL("Counter Attack")>2 OR SKILL("Iron Skin")>2 OR SKILL("Increased Speed")>2 OR SKILL("Puncture")>2 OR SKILL("Natural Resistance")>2 OR SKILL("Whirling Axes")>2 OR SKILL("Double Swing")>2 OR SKILL("Concentrate")>2 OR SKILL("Cleave")>2 OR SKILL("Frenzy")>2 OR SKILL("Stun")>2 OR SKILL("Leap")>2 OR SKILL("Bash")>2 OR SKILL("Ethereal Throw")>2 OR SKILL("Whirlwind")>2]:  %NAME%
 EndIf[]
 
 // Paladin test
@@ -555,13 +559,15 @@ EnableIf[(NMAG OR (MAG ID)) (WP2 OR WP13) (SOCK=0 OR SOCK>2)]
     ItemDisplay[(NMAG OR MAG) SKILL("Zeal")>2]: %NAME% %LIGHT_GRAY%+3 Zeal %CONTINUE%
     ItemDisplay[(NMAG OR MAG) SKILL("Vengeance")>2]: %NAME% %LIGHT_GRAY%+3 Vengeance %CONTINUE%
     ItemDisplay[(NMAG OR MAG) SKILL("Blessed Hammer")>2]: %NAME% %LIGHT_GRAY%+3 Blessed Hammer %CONTINUE%
-    ItemDisplay[(NMAG OR MAG) SKILL("Absolution")>2]: %NAME% %LIGHT_GRAY%+3 Absolution %CONTINUE%
+//    ItemDisplay[(NMAG OR MAG) SKILL("Conversion")>2]: %NAME% %LIGHT_GRAY%+3 Conversion %CONTINUE%
     ItemDisplay[(NMAG OR MAG) SKILL("Holy Shield")>0]: %NAME% %LIGHT_GRAY%+Holy Shield please post pic in lootfilter discord %CONTINUE%
     ItemDisplay[(NMAG OR MAG) SKILL("Fist of the Heavens")>2]: %NAME% %LIGHT_GRAY%+3 Fist of the Heavens %CONTINUE%
     ItemDisplay[(NMAG OR MAG) SKILL("Dashing Strike")>2]: %NAME% %LIGHT_GRAY%+3 Dashing Strike %CONTINUE%
-//    ItemDisplay[MAG (SKILL("Prayer")>2 OR SKILL("Resist Fire")>2 OR SKILL("Defiance")>2 OR SKILL("Resist Cold")>2 OR  SKILL("Cleansing")>2 OR SKILL("Resist Lightning")>2 OR SKILL("Vigor")>2 OR SKILL("Redemption")>2 OR SKILL("Salvation")>2 OR SKILL("Might")>2 OR SKILL("Holy Fire")>2 OR SKILL("Precision")>2 OR SKILL("Blessed Aim")>2 OR SKILL("Concentrate")>2 OR SKILL("Holy Freeze")>2 OR SKILL("Holy Shock")>2 OR SKILL("Sanctuary")>2 OR SKILL("Fanaticism")>2 OR SKILL("Conviction")>2 OR SKILL("Sacrifice")>2 OR SKILL("Smite")>2 OR SKILL("Holy Bolt")>2 OR SKILL("Zeal")>2 OR SKILL("Vengeance")>2 OR SKILL("Blessed Hammer")>2 OR SKILL("Absolution")>2 OR SKILL("Holy Shield")>2 OR SKILL("Fist of the Heavens")>2 OR SKILL("Dashing Strike")>2)]: %NAME% <:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
-    ItemDisplay[MAG (SKILL("Prayer")>2 OR SKILL("Resist Fire")>2 OR SKILL("Defiance")>2 OR SKILL("Resist Cold")>2 OR  SKILL("Cleansing")>2 OR SKILL("Resist Lightning")>2 OR SKILL("Vigor")>2 OR SKILL("Redemption")>2 OR SKILL("Salvation")>2 OR SKILL("Might")>2 OR SKILL("Holy Fire")>2 OR SKILL("Precision")>2 OR SKILL("Blessed Aim")>2 OR SKILL("Concentrate")>2 OR SKILL("Holy Freeze")>2 OR SKILL("Holy Shock")>2 OR SKILL("Sanctuary")>2 OR SKILL("Fanaticism")>2 OR SKILL("Conviction")>2 OR SKILL("Sacrifice")>2 OR SKILL("Smite")>2 OR SKILL("Holy Bolt")>2 OR SKILL("Zeal")>2 OR SKILL("Vengeance")>2 OR SKILL("Blessed Hammer")>2 OR SKILL("Holy Shield")>2 OR SKILL("Fist of the Heavens")>2 OR SKILL("Dashing Strike")>2)]: %NAME% <:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
-    ItemDisplay[NMAG (SKILL("Prayer")>2 OR SKILL("Resist Fire")>2 OR SKILL("Defiance")>2 OR SKILL("Resist Cold")>2 OR SKILL("Cleansing")>2 OR SKILL("Resist Lightning")>2 OR SKILL("Vigor")>2 OR SKILL("Redemption")>2 OR SKILL("Salvation")>2 OR SKILL("Might")>2 OR SKILL("Holy Fire")>2 OR SKILL("Precision")>2 OR SKILL("Blessed Aim")>2 OR SKILL("Concentrate")>2 OR SKILL("Holy Freeze")>2 OR SKILL("Holy Shock")>2 OR SKILL("Sanctuary")>2 OR SKILL("Fanaticism")>2 OR SKILL("Conviction")>2 OR SKILL("Sacrifice")>2 OR SKILL("Smite")>2 OR SKILL("Holy Bolt")>2 OR SKILL("Zeal")>2 OR SKILL("Vengeance")>2 OR SKILL("Blessed Hammer")>2 OR SKILL("Absolution")>2 OR SKILL("Holy Shield")>0 OR SKILL("Fist of the Heavens")>2 OR SKILL("Dashing Strike")>2)]: %NAME% <:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
+//    ItemDisplay[MAG (SKILL("Prayer")>2 OR SKILL("Resist Fire")>2 OR SKILL("Defiance")>2 OR SKILL("Resist Cold")>2 OR  SKILL("Cleansing")>2 OR SKILL("Resist Lightning")>2 OR SKILL("Vigor")>2 OR SKILL("Redemption")>2 OR SKILL("Salvation")>2 OR SKILL("Might")>2 OR SKILL("Holy Fire")>2 OR SKILL("Precision")>2 OR SKILL("Blessed Aim")>2 OR SKILL("Concentrate")>2 OR SKILL("Holy Freeze")>2 OR SKILL("Holy Shock")>2 OR SKILL("Sanctuary")>2 OR SKILL("Fanaticism")>2 OR SKILL("Conviction")>2 OR SKILL("Sacrifice")>2 OR SKILL("Smite")>2 OR SKILL("Holy Bolt")>2 OR SKILL("Zeal")>2 OR SKILL("Vengeance")>2 OR SKILL("Blessed Hammer")>2 OR SKILL("Conversion")>2 OR SKILL("Holy Shield")>2 OR SKILL("Fist of the Heavens")>2 OR SKILL("Dashing Strike")>2)]: %NAME% <:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
+ItemDisplay[MAG (SKILL("Prayer")>2 OR SKILL("Resist Fire")>2 OR SKILL("Defiance")>2 OR SKILL("Resist Cold")>2 OR  SKILL("Cleansing")>2 OR SKILL("Resist Lightning")>2 OR SKILL("Vigor")>2 OR SKILL("Redemption")>2 OR SKILL("Salvation")>2 OR SKILL("Might")>2 OR SKILL("Holy Fire")>2 OR SKILL("Precision")>2 OR SKILL("Blessed Aim")>2 OR SKILL("Concentrate")>2 OR SKILL("Holy Freeze")>2 OR SKILL("Holy Shock")>2 OR SKILL("Sanctuary")>2 OR SKILL("Fanaticism")>2 OR SKILL("Conviction")>2 OR SKILL("Sacrifice")>2 OR SKILL("Smite")>2 OR SKILL("Holy Bolt")>2 OR SKILL("Zeal")>2 OR SKILL("Vengeance")>2 OR SKILL("Blessed Hammer")>2 OR SKILL("Holy Shield")>2 OR SKILL("Fist of the Heavens")>2 OR SKILL("Dashing Strike")>2)]: %NAME% <:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
+//    ItemDisplay[NMAG (SKILL("Prayer")>2 OR SKILL("Resist Fire")>2 OR SKILL("Defiance")>2 OR SKILL("Resist Cold")>2 OR SKILL("Cleansing")>2 OR SKILL("Resist Lightning")>2 OR SKILL("Vigor")>2 OR SKILL("Redemption")>2 OR SKILL("Salvation")>2 OR SKILL("Might")>2 OR SKILL("Holy Fire")>2 OR SKILL("Precision")>2 OR SKILL("Blessed Aim")>2 OR SKILL("Concentrate")>2 OR SKILL("Holy Freeze")>2 OR SKILL("Holy Shock")>2 OR SKILL("Sanctuary")>2 OR SKILL("Fanaticism")>2 OR SKILL("Conviction")>2 OR SKILL("Sacrifice")>2 OR SKILL("Smite")>2 OR SKILL("Holy Bolt")>2 OR SKILL("Zeal")>2 OR SKILL("Vengeance")>2 OR SKILL("Blessed Hammer")>2 OR SKILL("Conversion")>2 OR SKILL("Holy Shield")>0 OR SKILL("Fist of the Heavens")>2 OR SKILL("Dashing Strike")>2)]: %NAME% <:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
+EndIf[]
+    ItemDisplay[NMAG (SKILL("Prayer")>2 OR SKILL("Resist Fire")>2 OR SKILL("Defiance")>2 OR SKILL("Resist Cold")>2 OR SKILL("Cleansing")>2 OR SKILL("Resist Lightning")>2 OR SKILL("Vigor")>2 OR SKILL("Redemption")>2 OR SKILL("Salvation")>2 OR SKILL("Might")>2 OR SKILL("Holy Fire")>2 OR SKILL("Precision")>2 OR SKILL("Blessed Aim")>2 OR SKILL("Concentrate")>2 OR SKILL("Holy Freeze")>2 OR SKILL("Holy Shock")>2 OR SKILL("Sanctuary")>2 OR SKILL("Fanaticism")>2 OR SKILL("Conviction")>2 OR SKILL("Sacrifice")>2 OR SKILL("Smite")>2 OR SKILL("Holy Bolt")>2 OR SKILL("Zeal")>2 OR SKILL("Vengeance")>2 OR SKILL("Blessed Hammer")>2 OR SKILL("Holy Shield")>0 OR SKILL("Fist of the Heavens")>2 OR SKILL("Dashing Strike")>2)]: %NAME% <:notify: NotificationPriority = HIGH, NotificationColor = ITEM>
 EndIf[]
 
 // Necro
