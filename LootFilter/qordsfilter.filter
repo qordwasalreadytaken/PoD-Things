@@ -45,7 +45,7 @@ FilterLevel[5]: No extra floor junk
 //FilterLevel[6]: Max filterlevel name length
 
 //Set the filter level and notification level of filter on load
-Option[DefaultFilterLevel]: Utility
+Option[DefaultFilterLevel]: Loosey goosey
 Option[DefaultNotifyLevel]: LOW
 
 // Define filter sounds
