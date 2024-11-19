@@ -23,8 +23,8 @@
 //
 Attribute[Author]: Qord 
 Attribute[Name]: QordsFilter
-Attribute[Version]: 8.17
-Attribute[Date]: 12 August
+Attribute[Version]: 11.18
+Attribute[Date]: 18 Nov
 Attribute[FilterLevels]: This is a description of the different filterlevels
 Attribute[AttributeQordsocool]: This is a description of the different filterlevels
 Option[OptionQordsocool]: True
@@ -373,7 +373,7 @@ ItemDisplay[UNI !ID FILTERLVL<5]: %NAME% // [%CODE%]
 //Good set parts
 ItemDisplay[(7ma OR amu OR uar OR ci3 OR 7qr OR uth OR ulg OR xtb OR xhm OR xmg OR ult OR xhl OR 7ls OR upl) SET]: %!setmacro!% <<ggsets>> //%CONTINUE%
 //Set catch all
-ItemDisplay[SET FILTERLVL<5]: %NAME% %CONTINUE%// [%CODE%]
+ItemDisplay[SET FILTERLVL<5]: %NAME% // %CONTINUE%// [%CODE%]
 
 //Sorceress Orbs, plague base....needs work
 //trim old lines, no need enflame-frig since pre-buff is no more
