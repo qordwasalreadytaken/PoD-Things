@@ -5,7 +5,7 @@ Check out the filter file itself for more verbose FilterLevel descriptions
 #####################################
 Update 11-18
 Fixes: Investigate reports of Tal Rasha helmet being hidden, poorly placed %CONTINUE% line; removed it
-Additions:  
+Additions:  Added recipe highlighting caster craft sorc orbs
 Changes: 
 
 

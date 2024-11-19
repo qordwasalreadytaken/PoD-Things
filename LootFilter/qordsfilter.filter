@@ -266,6 +266,7 @@ ItemDisplay[uit MAG]: %NAME% %GREEN%[nef] %GRAY%[%ILVL%]{%GRAY%Nef Rune + Perfec
 ItemDisplay[(hbt OR xhb) MAG]: %NAME% %GREEN%[ort] %GRAY%[%ILVL%]{%GRAY%Ort Rune + Perfect Emerald + This Magical Item + Jewel = Crafted Safety Boots%NL%%GRAY%Horadric Cube Craft Recipe}
 ItemDisplay[(ltp OR xtp OR utp) MAG]: %NAME% %PURPLE%[tal] %GRAY%[%ILVL%]{%GRAY%Tal Rune + Perfect Amethyst + This Magical Item + Jewel = Crafted Caster Armor%NL%%GRAY%Horadric Cube Craft Recipe}
 ItemDisplay[(sml OR xml OR uml) MAG]: %NAME% %PURPLE%[eth] %GRAY%[%ILVL%]{%GRAY%Eth Rune + Perfect Amethyst + This Magical Item + Jewel = Crafted Caster Shield%NL%%GRAY%Horadric Cube Craft Recipe}
+ItemDisplay[(CL6 OR WP11) MAG]: %NAME% %PURPLE%[tir] %GRAY%[%ILVL%]{%GRAY%Tir Rune + Perfect Amethyst + This Magical Item + Jewel = Crafted Caster Weapon%NL%%GRAY%Horadric Cube Craft Recipe}
 //Craft catch-all, always show crafterd items
 ItemDisplay[CRAFT !SOCK=0]: %NAME% %!tansocks!% %CONTINUE%
 ItemDisplay[CRAFT]: %NAME% %CONTINUE%
@@ -373,7 +374,7 @@ ItemDisplay[UNI !ID FILTERLVL<5]: %NAME% // [%CODE%]
 //Good set parts
 ItemDisplay[(7ma OR amu OR uar OR ci3 OR 7qr OR uth OR ulg OR xtb OR xhm OR xmg OR ult OR xhl OR 7ls OR upl) SET]: %!setmacro!% <<ggsets>> //%CONTINUE%
 //Set catch all
-ItemDisplay[SET FILTERLVL<5]: %NAME% // %CONTINUE%// [%CODE%]
+ItemDisplay[SET !ID FILTERLVL<5]: %NAME% // %CONTINUE%// [%CODE%]
 
 //Sorceress Orbs, plague base....needs work
 //trim old lines, no need enflame-frig since pre-buff is no more
