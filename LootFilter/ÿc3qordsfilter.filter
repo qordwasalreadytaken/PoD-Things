@@ -272,7 +272,7 @@ ItemDisplay[CRAFT !SOCK=0]: %NAME% %!tansocks!% %CONTINUE%
 ItemDisplay[CRAFT]: %NAME% %CONTINUE%
 // Magic Rings and amulets
 ItemDisplay[(rin OR amu) MAG ILVL>90]: %NAME% %WHITE%[%ILVL%] %CONTINUE%
-ItemDisplay[(rin OR amu) MAG FILTERLVL=1]: %NAME% %GRAY%[%ILVL%] %CONTINUE%
+ItemDisplay[(rin OR amu) MAG FILTERLVL<3]: %NAME% %GRAY%[%ILVL%] %CONTINUE%
 // Magic arrows and bolts
 ItemDisplay[(aq2 OR cq2) MAG ILVL>90]: %NAME% %WHITE%[%ILVL%] %CONTINUE%
 ItemDisplay[(aq2 OR cq2) MAG FILTERLVL<3]: %NAME% %GRAY%[%ILVL%] %CONTINUE%
@@ -858,9 +858,9 @@ ItemDisplay[(UNI OR SET OR CRAFT) ID]: %NAME% //%CONTINUE%//[%CODE%]
 ItemDisplay[(CL1 OR CL2 OR CL5 OR CL6 OR WP12 OR WP6 OR CL7) (FILTERLVL=1) MAG ETH]: %GRAY%ETH %BLUE%%NAME%
 ItemDisplay[(CL1 OR CL2 OR CL5 OR CL6 OR WP12 OR WP6 OR CL7) RARE ETH]: %GRAY%ETH %YELLOW%%NAME%
 ItemDisplay[(CL1 OR CL2 OR CL5 OR CL6 OR WP12 OR WP6 OR CL7) (MAG OR RARE) (FILTERLVL<3)]: %NAME%
-ItemDisplay[WEAPON (WP6 AND CL7) MAG ETH]: %GRAY%ETH %BLUE%Fix the filter Qord4 %NAME% //redundant?
-ItemDisplay[WEAPON (WP6 AND CL7) RARE ETH]: %GRAY%ETH %YELLOW%Fix the filter Qord5 %NAME% //redundant?
-ItemDisplay[WEAPON (WP6 AND CL7) (MAG OR RARE)]: Fix the filter Qord6 %NAME% //redundant?
+//ItemDisplay[WEAPON (WP6 AND CL7) MAG ETH]: %CONTINUEGRAY%ETH %BLUE%Fix the filter Qord4 %NAME% //redundant?
+//ItemDisplay[WEAPON (WP6 AND CL7) RARE ETH]: %GRAY%ETH %YELLOW%Fix the filter Qord5 %NAME% //redundant?
+//ItemDisplay[WEAPON (WP6 AND CL7) (MAG OR RARE)]: Fix the filter Qord6 %NAME% //redundant?
 ItemDisplay[(wsp OR 9ws OR 7ws) (MAG OR RARE) !ETH]: %NAME%
 
 //TP & ID Scrolls
