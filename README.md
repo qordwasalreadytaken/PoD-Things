@@ -35,7 +35,7 @@ Filterlevel 4: Same as above but
     Hides some lower set and unique items
     Many items whose numbers of sockets was shown in grey
 Filterlevel 5: Strictest
-    Any item whose sockets were shown in grey (most tan socketed items remain visible)
+    Almost all items whose sockets were shown in grey (most tan socketed items remain visible)
 
 
 To be continued...

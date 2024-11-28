@@ -3,6 +3,12 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 11-28
+Fixes: 
+Additions: Added "total resists over 60" line for ring/ammy
+Changes: Changed sorc skills to show 1-3 instead of just 3
+
+#####################################
 Update 11-21
 Fixes: Undo changes that hid the newest P22 Paladin and BArb skills from showing in item names
 Additions:  
