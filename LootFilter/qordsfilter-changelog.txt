@@ -3,6 +3,13 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 12-26
+Fixes: 
+Additions: 
+Changes: Changed Circlets to if block, plan to add display stats at some point
+    Changed pally shields to show eth 
+
+#####################################
 Update 11-28
 Fixes: 
 Additions: Added "total resists over 60" line for ring/ammy

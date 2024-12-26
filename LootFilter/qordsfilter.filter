@@ -267,7 +267,7 @@ ItemDisplay[(hbt OR xhb) MAG]: %NAME% %GREEN%[ort] %GRAY%[%ILVL%]{%GRAY%Ort Rune
 ItemDisplay[(ltp OR xtp OR utp) MAG]: %NAME% %PURPLE%[tal] %GRAY%[%ILVL%]{%GRAY%Tal Rune + Perfect Amethyst + This Magical Item + Jewel = Crafted Caster Armor%NL%%GRAY%Horadric Cube Craft Recipe}
 ItemDisplay[(sml OR xml OR uml) MAG]: %NAME% %PURPLE%[eth] %GRAY%[%ILVL%]{%GRAY%Eth Rune + Perfect Amethyst + This Magical Item + Jewel = Crafted Caster Shield%NL%%GRAY%Horadric Cube Craft Recipe}
 ItemDisplay[(CL6 OR WP11) MAG]: %NAME% %PURPLE%[tir] %GRAY%[%ILVL%]{%GRAY%Tir Rune + Perfect Amethyst + This Magical Item + Jewel = Crafted Caster Weapon%NL%%GRAY%Horadric Cube Craft Recipe}
-ItemDisplay[(EQ7) MAG]: %NAME% %PURPLE%[nef] %GRAY%or %RED%[ral] %GRAY%or %BLUE%[ith] %GRAY%or %GREEN%[ith] %GRAY%[%ILVL%] {%GRAY%Craft recipes for circlets}
+//ItemDisplay[(EQ7) MAG]: %NAME% %PURPLE%[nef] %GRAY%or %RED%[ral] %GRAY%or %BLUE%[ith] %GRAY%or %GREEN%[ith] %GRAY%[%ILVL%] {%GRAY%Craft recipes for circlets}
 
 //Craft catch-all, always show crafterd items
 ItemDisplay[CRAFT !SOCK=0]: %NAME% %!tansocks!% %CONTINUE%
@@ -289,11 +289,21 @@ ItemDisplay[(EQ4 OR EQ5 OR EQ6 OR mpi) RARE !ID]: %NL%%NAME%%NL% %NL%<<rare>>
 ItemDisplay[(EQ4 OR EQ5 OR EQ6 OR mpi) RARE]: %NAME% <<rare>> %CONTINUE%
 
 //Circlets
-ItemDisplay[EQ7 MAG ETH]: %GRAY%ETH %BLUE%%NAME% 
-ItemDisplay[EQ7 RARE ETH]: %GRAY%ETH %YELLOW%%NAME% 
-ItemDisplay[EQ7 RARE !ETH !ID]:%NL% %TAN%»» %YELLOW%%NAME%%TAN% ««%NL% <<rare>> 
-ItemDisplay[EQ7 (MAG OR RARE)]:%NL% %NAME%%NL% %CONTINUE%
-ItemDisplay[ci3 NMAG !ETH SOCK=0]: %NAME% %YELLOW%[%GRAY%imbue%YELLOW%]
+EnableIf[EQ7]
+      ItemDisplay[RARE ETH]: %GRAY%ETH %YELLOW%%NAME% 
+      ItemDisplay[RARE !ETH]:%NL% %TAN%»» %YELLOW%%NAME%%TAN% ««%NL% <<rare>> 
+      ItemDisplay[MAG ETH]: %GRAY%ETH %BLUE%%NAME% %CONTINUE%
+      ItemDisplay[MAG]: %BLUE%%NAME% %CONTINUE%
+      ItemDisplay[MAG ID]: %NAME% %PURPLE%[nef] %GRAY%or %RED%[ral] %GRAY%or %BLUE%[ith] %GRAY%or %GREEN%[ith] %GRAY%[%ILVL%] {%GRAY%Craft recipes for circlets} %CONTINUE%
+    ItemDisplay[ci3 NMAG !ETH SOCK=0]: %NAME% %YELLOW%[%GRAY%imbue%YELLOW%]
+EndIf[]
+ItemDisplay[EQ7 (MAG OR RARE)]: %NAME%
+
+//ItemDisplay[EQ7 MAG ETH]: %GRAY%ETH %BLUE%%NAME% 
+//ItemDisplay[EQ7 RARE ETH]: %GRAY%ETH %YELLOW%%NAME% 
+//ItemDisplay[EQ7 RARE !ETH !ID]:%NL% %TAN%»» %YELLOW%%NAME%%TAN% ««%NL% <<rare>> 
+//ItemDisplay[EQ7 (MAG OR RARE)]:%NL% %NAME%%NL% %CONTINUE%
+//ItemDisplay[ci3 NMAG !ETH SOCK=0]: %NAME% %YELLOW%[%GRAY%imbue%YELLOW%]
 
 //Arrows Bolts
 ItemDisplay[RARE (aq2 OR cq2) (AREALVL > 12 AND AREALVL < 21)]: %NL% %NAME% %NL% <<rare>> %CONTINUE%
