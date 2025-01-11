@@ -137,7 +137,7 @@ ItemDisplay[rvs]: %PURPLE%r %WHITE%35%
 //ItemDisplay["Super Healing Potion"]: %RED%%NAME% %MAPICON(4,5)% %BORDER(1,33)% %BGCOLOR(4)% 
 ItemDisplay["Super Healing Potion" AND CLVL>85 AND CHARSTAT(6)<400]: %RED%! Drink a pot ! %WHITE% Hp
 ItemDisplay["Super Healing Potion"]:  %RED%!%WHITE%Hp
-ItemDisplay["Super Mana Potion" AND CHARSTAT(8)<5]: %BLUE%! Haha you ranna outta mana ! %WHITE% Mp
+//ItemDisplay["Super Mana Potion" AND CHARSTAT(8)<5]: %BLUE%! Haha you ranna outta mana ! %WHITE% Mp
 ItemDisplay["Super Mana Potion"]: %BLUE%!%WHITE%Mp
 ItemDisplay[hp1 FILTERLVL<4 DIFFICULTY=0]: %RED%!%WHITE%minor hp
 ItemDisplay[hp2 FILTERLVL<4 DIFFICULTY=0]: %RED%!%WHITE%light hp
