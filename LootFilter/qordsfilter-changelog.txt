@@ -3,6 +3,13 @@ All changes to Qords filter will be tracked here
 Check out the filter file itself for more verbose FilterLevel descriptions
 
 #####################################
+Update 02-07
+Fixes: 
+Additions: Allowed for more lower skill level paladin NMAG weapons to be shown below filterlevel 4, better visibility for Foh and Dash
+Changes: Removed "2-hand" BO text from MAG weapons, it's improperly showing 2 handed on some 1 handed, and vice versa
+    Changed highlighting on Deadly Poison wands and heads to not look like hemo, instead it'll have green "+3" font
+
+#####################################
 Update 12-26
 Fixes: 
 Additions: 
