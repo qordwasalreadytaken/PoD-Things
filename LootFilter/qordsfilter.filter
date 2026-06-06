@@ -56,6 +56,9 @@ Sound[corb1]: "ding"
 Sound[corb2]: "ding"
 Sound[corb3]: "zelda2"
 
+//Testing notes, currently not working
+ItemDescription[ALTNote]: Press ALT for more // {{ALTNote}}
+
 //Text Macros
 //Called with %!macroname!%, %!tansocks!% for example
 TextMacro[upb4slam]:          %RED%Upgrade before corrupting for chance at max sockets
@@ -133,12 +136,12 @@ ItemDisplay[GOLD>5000 CLVL>79]: %NAME%
 
 //Pots
 ItemDisplay[rvl]: %PURPLE%R %WHITE%70% //%NOTIFYSOUND(corb3)%
-ItemDisplay[rvs]: %PURPLE%r %WHITE%35%
+ItemDisplay[rvs]: %PURPLE%r %WHITE%35% %BGCOLOR(4)%
 //ItemDisplay["Super Healing Potion"]: %RED%%NAME% %MAPICON(4,5)% %BORDER(1,33)% %BGCOLOR(4)% 
 //ItemDisplay["Super Healing Potion" AND CLVL>85 AND CHARSTAT(6)<400]: %RED%! Drink a pot ! %WHITE% Hp
 ItemDisplay["Super Healing Potion"]:  %RED%!%WHITE%Hp
 //ItemDisplay["Super Mana Potion" AND CHARSTAT(8)<5]: %BLUE%! Haha you ranna outta mana ! %WHITE% Mp
-ItemDisplay["Super Mana Potion"]: %BLUE%!%WHITE%Mp
+ItemDisplay[mp5 OR "Super Mana Potion"]: %BLUE%!%WHITE%Mp
 ItemDisplay[hp1 FILTERLVL<4 DIFFICULTY=0]: %RED%!%WHITE%minor hp
 ItemDisplay[hp2 FILTERLVL<4 DIFFICULTY=0]: %RED%!%WHITE%light hp
 ItemDisplay[hp3 FILTERLVL<4 DIFFICULTY=0]: %RED%!%WHITE%healing
@@ -186,6 +189,8 @@ ItemDisplay[leg]: %NAME%  <<qspecials>>
 // Alt text for horadric staff
 ItemDisplay[hst OR msf]: %TAN%%NAME% <:notify: NotificationColor = GOLD> {%NAME% %DGREEN%[Circle]                [Circle&Crescent]%NL%[Crescent]             [Triangle]%NL%[Square]     [Arrows]%NL%[Star]%NL%%ORANGE%DURIEL TOMB ORDER:} //%NOTIFY(GOLD)%
 // Alt test for horadric cube
+//ItemDisplay[box]: %TAN%%NAME% {{ALTNote}} { %!cubesox!% } <:notify: NotificationColor = GOLD> 
+// itemdescription not displaying properly
 ItemDisplay[box]: %TAN%%NAME% { %!cubesox!% } <:notify: NotificationColor = GOLD> 
 // Other quest
 ItemDisplay[QUEST]: %TAN%%NAME% <:notify: NotificationColor = GOLD> //%NOTIFY(GOLD)%
@@ -241,7 +246,8 @@ ItemDisplay[gpr]: %RED%Ø P %WHITE%Ruby %RED%Ø<:notify: MapIcon = 49>
 ItemDisplay[gpb]: %BLUE%Ø P %WHITE%Sapphire %BLUE%Ø<<notify>>
 ItemDisplay[gpy]: %YELLOW%Ø P %WHITE%Topaz %YELLOW%Ø<<notify>>
 ItemDisplay[skz]: %WHITE%Ø P %WHITE%Skull %WHITE%Ø<:notify: MapIcon = 49> //<<stack>>
-ItemDisplay[GEM FILTERLVL=1 AND (DIFFICULTY=0 or CLVL<40)]: %NAME%
+// fix for filterbird, GEM keyword
+//ItemDisplay[GEM AND FILTERLVL=1 AND (DIFFICULTY=0 OR CLVL<40)]: %NAME%
 
 //Magic and rare Rings and amulets
 ItemDisplay[(rin OR amu) RARE !ID]: %TAN%»» %YELLOW%%NAME%%TAN% «« <<lowprionotify>>
@@ -306,7 +312,8 @@ ItemDisplay[EQ7 (MAG OR RARE)]: %NAME%
 //ItemDisplay[ci3 NMAG !ETH SOCK=0]: %NAME% %YELLOW%[%GRAY%imbue%YELLOW%]
 
 //Arrows Bolts
-ItemDisplay[RARE (aq2 OR cq2) (AREALVL > 12 AND AREALVL < 21)]: %NL% %NAME% %NL% <<rare>> %CONTINUE%
+// filterbird
+ItemDisplay[RARE (aq2 OR cq2) (AREALVL>12 AND AREALVL<21)]: %NL% %NAME% %NL% <<rare>> %CONTINUE%
 ItemDisplay[RARE (aq2 OR cq2) ILVL>60]: %NL% %NAME% %NL% <<rare>> %CONTINUE%
 ItemDisplay[RARE (aq2 OR cq2) FILTERLVL<5]: %NAME% %CONTINUE% 
 
@@ -822,8 +829,10 @@ ItemDisplay[(EQ3) AND (NMAG OR RW)  (SOCK=0 OR SOCK>1) FILTERLVL=1]: %GRAY% %NAM
 
 //Other requests, eth elder & archon staff, axes, elite 4os swords
 ItemDisplay[(6cs OR 6ws) NMAG ETH (SOCK=0 OR SOCK>3) FILTERLVL<3]: %NAME% %!graysocks!%
-ItemDisplay[NMAG WP1 (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!%
-ItemDisplay[(WP16 OR WP15) (ELT OR EXC) NMAG (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!% //are wp15, wp16, and wp17 working yet??
+// filterbird, filterlvl..spaces
+ItemDisplay[NMAG WP1 (SOCK=0 OR SOCK=4) FILTERLVL=1]: %NAME% %!graysocks!%
+// fix for filterbird, filterlevel....spaces fix?
+ItemDisplay[(WP16 OR WP15) (ELT OR EXC) NMAG (SOCK=0 OR SOCK=4) FILTERLVL=1]: %NAME% %!graysocks!% //are wp15, wp16, and wp17 working yet??
 //ItemDisplay[WP3 ELT NMAG (SOCK=0 OR SOCK=4) FILTERLVL= 1]: %NAME% %!graysocks!%
 
 //Shopping list for vendor notifications that aren't listed above
@@ -893,7 +902,8 @@ ItemDisplay[(9ga OR spc OR wnd OR ywn OR bwn OR gwn OR ktr OR wrb OR xtp OR xld 
 ItemDisplay[WEAPON (RARE OR SET OR UNI OR CRAFT) ID]:%NAME%{%GRAY% Enh Dam 35-50% | Deadly Strike 10% | Max Dam Clvl | CB 20% | IAS 10-15% %NL% %!pcm!%}
 //boots
 //ItemDisplay[EQ5 (RARE OR SET OR UNI OR CRAFT) ID]:%NAME%{%GRAY% Fire Res 10-20% | All Res 5-10% | Dex 5-15 | Light Res 10-20% | Cooldown -10% %NL% %!pcm!%}
-ItemDisplay[EQ5 (RARE OR SET OR UNI OR CRAFT) ID AND !STAT360 = 1]:%NAME%{%GRAY% Fire Res 10-20% | All Res 5-10% | Dex 5-15 | Light Res 10-20% | Cooldown -10% %NL% %!pcm!%}
+// fix for filterbird, stat360....spaces were the problem???
+ItemDisplay[EQ5 (RARE OR SET OR UNI OR CRAFT) ID AND !STAT360=1]:%NAME%{%GRAY% Fire Res 10-20% | All Res 5-10% | Dex 5-15 | Light Res 10-20% | Cooldown -10% %NL% %!pcm!%}
 //gloves
 ItemDisplay[EQ4 (RARE OR SET OR UNI OR CRAFT) ID]:%NAME%{%GRAY% IAS 10% | Cold Res 10-20% | All Res 5-10% | LGOH M5-10, R5-10 | Psn Res 10-20% %NL% %!pcm!%}
 //belt

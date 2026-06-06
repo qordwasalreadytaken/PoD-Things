@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Project Links</title>
+	<style>
+		:root {
+			--bg: #09070b;
+			--surface: #161018;
+			--surface-2: #1c141f;
+			--text: #f2e9ef;
+			--muted: #bca8b4;
+			--accent: silver;
+			--border: #402332;
+			--shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			font-family: "Trebuchet MS", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			color: var(--text);
+			background:
+				radial-gradient(circle at 12% 10%, rgba(167, 21, 59, 0.26), transparent 34%),
+				radial-gradient(circle at 88% 12%, rgba(93, 16, 44, 0.22), transparent 38%),
+				linear-gradient(180deg, #120a11 0%, #09070b 58%, #0d0710 100%),
+				var(--bg);
+			min-height: 100vh;
+		}
+
+		.page {
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 32px 16px 64px;
+		}
+
+		.header {
+			margin-bottom: 24px;
+		}
+
+		h1 {
+			margin: 0 0 8px;
+			font-size: clamp(1.6rem, 3vw, 2.2rem);
+			font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+			letter-spacing: 0.02em;
+			color: #ffd8e3;
+			text-shadow: 0 0 18px rgba(201, 38, 89, 0.28);
+		}
+
+		.subtitle {
+			margin: 0;
+			color: var(--muted);
+		}
+
+		.sections {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+			gap: 16px;
+		}
+
+		.card {
+			background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
+			border: 1px solid var(--border);
+			border-radius: 14px;
+			box-shadow: var(--shadow);
+			padding: 18px;
+		}
+
+		.card h2 {
+			margin: 0 0 12px;
+			font-size: 1.05rem;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+		}
+
+		.link-list {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: grid;
+			gap: 10px;
+		}
+
+		.link-list a {
+			display: block;
+			text-decoration: none;
+			color: var(--accent);
+			padding: 8px 10px;
+			border-radius: 8px;
+			border: 1px solid #563041;
+			background: rgba(56, 27, 44, 0.52);
+			transition: background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
+		}
+
+		.link-list a:hover,
+		.link-list a:focus-visible {
+			background: rgba(91, 34, 60, 0.62);
+			border-color: #96526c;
+			transform: translateY(-1px);
+			outline: none;
+		}
+
+		.hint {
+			margin-top: 18px;
+			color: var(--muted);
+			font-size: 0.95rem;
+		}
+
+		[hidden] {
+			display: none !important;
+		}
+	</style>
+</head>
+<body>
+	<main class="page">
+		<header class="header">
+			<h1>When Qord gets bored</h1>
+			<p class="subtitle">An index page for all PoD-related projects Qord helps with. This is as much to keep me straight and organized as it is anything else.</p>
+		</header>
+
+		<section class="sections" aria-label="Project link groups">
+			<article class="card" id="production-section">
+				<h2>Production Sites</h2>
+				<ul class="link-list">
+					<li><a href="https://build.pathofdiablo.com/">PoD Build Planner, originally by BetweenWalls, maintained by PoD volunteers</a></li>
+					<li><a href="https://trends.pathofdiablo.com/">Trends analytics and reporting</a></li>
+					<li><a href="https://pathofdiablo.com/runewizard/">PoD Runewizard, maintained by PoD volunteers</a></li>
+					<li><a href="https://qordwasalreadytaken.github.io/pod-stats/ranking.html">PoD Order of Sanctuary, Sethy's awards and achievements</a></li>
+                    <li><a href="https://qordwasalreadytaken.github.io/filterbird/">PoD FilterPhoenix, originally by BetweenWalls, maintained-ish by PoD volunteers</a></li>
+                    <li><a href="https://qordwasalreadytaken.github.io/PoD-WikiHelper/">PoD WikiHelper, makes editing skill changes for the wiki easier</a></li>
+                    <li><a href="https://qordwasalreadytaken.github.io/path-of-diablo-planner/synth-maker.html">PoD Synth Maker, simulate synth items</a></li>
+                    <li><a href="https://raw.githubusercontent.com/qordwasalreadytaken/PoD-Things/main/LootFilter/qordsfilter.filter">Qord's Filter, direct link to my loot filter</a></li>
+				</ul>
+			</article>
+
+			<article class="card" id="test-section">
+				<h2>Test & Development Sites</h2>
+				<ul class="link-list">
+					<li><a href="https://qordwasalreadytaken.github.io/pod-stats/Home.html">Heavy testing site for Trends reporting</a></li>
+                    <li><a href="https://qordwasalreadytaken.github.io/pod-auto-test/">Test site for Trends automations only</a></li>
+					<li><a href="https://qordwasalreadytaken.github.io/path-of-diablo-planner/index.html">Test site for the PoD build planner, this is where I break things</a></li>
+					<li><a href="https://qordwasalreadytaken.github.io/filter-builder/filter-builder.html">Visual Point & Click Filter Builder</a></li>
+                    <li><a href="https://qordwasalreadytaken.github.io/PoD-History-Builder/synth-viewer.html">Synth item viewer</a></li>
+                    <li><a href="https://qordwasalreadytaken.github.io/PoD-History-Builder/synth-viewer2.html">Better Synth item viewer</a></li>
+					<li><a href="https://qordwasalreadytaken.github.io/PoD-History-Builder/search.html">History builder using build planner links to import data, not great and kinda buggy</a></li>
+					<li><a href="https://qordwasalreadytaken.github.io/PoD-History-Builder/new-history/wayback.html">Better history builder that doesn't rely on wonky build planner imports</a></li>
+					<li><a href="https://qordwasalreadytaken.github.io/PoDBuildExplorer/Builds.html">Build Explorer, a different way to look at character buids in use</a></li>
+				</ul>
+			</article>
+		</section>
+        <br>
+		<section class="sections" aria-label="Project link groups">
+			<article class="card" id="admin-section" hidden>
+				<h2>Admin Sites</h2>
+				<ul class="link-list">
+					<li><a href="https://qordwasalreadytaken.github.io/PoD-History-Builder/new-history/wayback.html?admin=1">Better history builder that shows recently changed characters</a></li>
+					<li><a href="https://qordwasalreadytaken.github.io/pod-stats/ranking-xp-breakdown.html">PoD Order of Sanctuary, showing breakdown of XP</a></li>
+					<li><a href="https://qordwasalreadytaken.github.io/pod-stats/ranking-noitems.html">PoD Order of Sanctuary, ranking without items</a></li>
+				</ul>
+			</article>
+		</section>
+
+		<p class="hint">Tip: append ?admin to the URL to view admin links.</p>
+	</main>
+
+	<script>
+		(function () {
+			var isAdminView = window.location.search === "?admin";
+			var adminSection = document.getElementById("admin-section");
+			if (adminSection) {
+				adminSection.hidden = !isAdminView;
+			}
+
+			var links = document.querySelectorAll("a[href]");
+			links.forEach(function (link) {
+				link.target = "_blank";
+				link.rel = "noopener noreferrer";
+			});
+		})();
+	</script>
+</body>
+</html>
